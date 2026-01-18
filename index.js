@@ -46,8 +46,7 @@ const portfolioItems = [
   {
     title: "Beacon Port",
     description:
-      "금융 데이터의 시각화와 복잡한 트랜잭션 흐름을 직관적인 UX로 풀어낸 차세대 뱅킹 솔루션입니다.",
-    linkLabel: "VIEW PROJECT →",
+      "복잡한 이력서 관리를 직관적인 UX와 AI 협업으로 풀어낸 퍼스널 브랜딩 플랫폼입니다. 단순한 문서 저장을 넘어, 개인의 역량을 가장 빛나는 신호로 바꾸어 전달합니다.",
     linkHref: "https://www.beaconport.online/",
     thumbnailUrl: "assets/beacon-port.png",
   },
@@ -98,6 +97,8 @@ function renderPortfolio() {
   if (!container) return;
   container.innerHTML = "";
 
+  const linkLabel = "VIEW PROJECT →";
+
   portfolioItems.forEach((item) => {
     const node = cloneTemplate("portfolio-card-template");
     if (!node) return;
@@ -105,7 +106,7 @@ function renderPortfolio() {
     node.querySelector("p").textContent = item.description;
 
     const link = node.querySelector(".portfolio-link");
-    link.textContent = item.linkLabel;
+    link.textContent = linkLabel;
     link.setAttribute("href", item.linkHref);
     link.setAttribute("target", "_blank");
     link.setAttribute("rel", "noreferrer");
