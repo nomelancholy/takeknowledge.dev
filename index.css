@@ -1,0 +1,300 @@
+:root {
+  --paper: #f0eee9;
+  --ink: #1a1a1a;
+  --ink-light: #333333;
+  --accent: #d35400;
+  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Outfit", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.4;
+}
+
+/* The Grain Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--grain);
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Letterpress Effect Utility */
+.pressed {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+}
+
+.debossed-text {
+  color: var(--ink);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+header {
+  padding: 60px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid var(--ink);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 3rem;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+nav {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+section {
+  padding: 100px 5%;
+}
+
+.hero-text {
+  max-width: 600px;
+  font-size: 1.05rem;
+  opacity: 0.8;
+}
+
+.about-section {
+  background: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.section-label {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  margin-bottom: 40px;
+  letter-spacing: -3px;
+}
+
+#hero h2 {
+  font-size: clamp(1.6rem, 6vw, 3.8rem);
+  margin-bottom: 24px;
+}
+
+/* Career & Skills */
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.career-item {
+  margin-bottom: 40px;
+  padding-left: 20px;
+  border-left: 1px solid var(--ink);
+}
+
+.career-date {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.career-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 5px 0;
+}
+
+.skill-list {
+  margin-top: 20px;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 0 8px 12px 0;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--ink);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateY(-3px);
+}
+
+/* Portfolio Slider */
+.portfolio-container {
+  position: relative;
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-card {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.portfolio-image {
+  aspect-ratio: 16/10;
+  background: #e0ddd7;
+  border: 1px solid var(--ink);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 15px 15px 0px var(--ink);
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: grayscale(1) contrast(1.2);
+  mix-blend-mode: multiply;
+  transition: all 0.5s ease;
+}
+
+.portfolio-card:hover img {
+  filter: grayscale(0) contrast(1);
+  mix-blend-mode: normal;
+}
+
+.portfolio-info h3 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 30px;
+  font-family: "Roboto Mono", monospace;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 800;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.portfolio-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.slider-controls {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.nav-btn {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Contact */
+.contact-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.email-link {
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: -2px;
+  transition: color 0.3s;
+}
+
+.email-link:hover {
+  color: var(--accent);
+}
+
+.social-row {
+  margin-top: 40px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.social-row a,
+.social-row a:visited {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.social-row a:hover,
+.social-row a:focus {
+  color: var(--accent);
+}
+
+footer {
+  padding: 40px 5%;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.7rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .split-grid,
+  .portfolio-card {
+    grid-template-columns: 1fr;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

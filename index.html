@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Take Knowledge | Fullstack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;800&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo debossed-text">Take Knowledge</div>
+      <nav>Fullstack Developer / Based in South Korea</nav>
+    </header>
+
+    <section id="hero">
+      <span class="section-label">// Introduction</span>
+      <h2 class="debossed-text">
+        개발 지식을 도구로,<br />제품과 서비스의 가치를 만듭니다.
+      </h2>
+      <p class="hero-text">
+        비즈니스의 가치를 이해하고 사용자의 디지털 경험을 설계합니다.
+      </p>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="split-grid">
+        <div>
+          <span class="section-label">// Career Path</span>
+          <div id="career-list"></div>
+        </div>
+        <div>
+          <span class="section-label">// Skill Stack</span>
+          <div class="skill-list" id="skill-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <span class="section-label">// Selected Works</span>
+      <div class="portfolio-container">
+        <div class="slider-track" id="slider"></div>
+
+        <div class="slider-controls">
+          <button class="nav-btn pressed" data-direction="-1" type="button">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="nav-btn pressed" data-direction="1" type="button">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-content">
+        <span class="section-label">// Get in touch</span>
+        <h2 class="debossed-text">새로운 가치를<br />함께 만듭니다.</h2>
+        <a href="mailto:hello@takeknowledge.dev" class="email-link"
+          >takeknowledge90@gmail.com</a
+        >
+        <div class="social-row">
+          <a target="_blank" href="https://github.com/nomelancholy">
+            [ GITHUB ]</a
+          >
+          <a target="_blank" href="https://www.youtube.com/@nomelancholy">
+            [ YOUTUBE ]
+          </a>
+          <a target="_blank" href="https://velog.io/@takeknowledge/posts">
+            [ BLOG ]</a
+          >
+          <a target="_blank" href="https://brunch.co.kr/@takeknowledge">
+            [ BRUNCH ]</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2026 TAKE KNOWLEDGE. ALL RIGHTS RESERVED. PRINTED IN DIGITAL GRAIN.
+    </footer>
+
+    <template id="career-item-template">
+      <div class="career-item">
+        <div class="career-date"></div>
+        <div class="career-title"></div>
+        <p></p>
+      </div>
+    </template>
+
+    <template id="skill-tag-template">
+      <span class="skill-tag"></span>
+    </template>
+
+    <template id="portfolio-card-template">
+      <div class="portfolio-card">
+        <div class="portfolio-image">
+          <img alt="" />
+        </div>
+        <div class="portfolio-info">
+          <h3></h3>
+          <p></p>
+          <a class="portfolio-link"></a>
+        </div>
+      </div>
+    </template>
+
+    <script src="index.js"></script>
+  </body>
+</html>
