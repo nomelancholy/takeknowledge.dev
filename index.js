@@ -50,6 +50,13 @@ const portfolioItems = [
     linkHref: "https://www.beaconport.online/",
     thumbnailUrl: "assets/beacon-port.png",
   },
+  {
+    title: "SEE VAR",
+    description:
+      "K League 심판 데이터를 라운드별로 정리해 보여주는 서비스입니다. 라운드 베스트/워스트, 쟁점 순간 등 정보를 한 화면에서 탐색할 수 있습니다.",
+    linkHref: "https://seevar.online/",
+    thumbnailUrl: "assets/seevar.png",
+  },
 
 ];
 
