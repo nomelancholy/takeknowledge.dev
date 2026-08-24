@@ -85,15 +85,6 @@ section {
   padding: 100px 5%;
 }
 
-#hero .hero-text {
-  max-width: 600px;
-  font-size: 1rem;
-  opacity: 0.8;
-  letter-spacing: 0.02em;
-  line-height: 1.65;
-  margin-top: 18px;
-}
-
 .about-section {
   background: rgba(0, 0, 0, 0.02);
   border-top: 1px solid var(--ink);
@@ -116,13 +107,6 @@ h2 {
   line-height: 0.9;
   margin-bottom: 40px;
   letter-spacing: -3px;
-}
-
-#hero h2 {
-  font-size: clamp(1.6rem, 6vw, 3.8rem);
-  margin-bottom: 24px;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
 }
 
 /* Career & Skills */
@@ -490,14 +474,5 @@ footer {
   }
   .journey-index {
     flex-direction: row;
-  }
-  #hero h2 {
-    letter-spacing: -0.01em;
-    line-height: 1.25;
-  }
-  #hero .hero-text {
-    letter-spacing: 0.02em;
-    font-size: 0.95rem;
-    margin-top: 20px;
   }
 }
