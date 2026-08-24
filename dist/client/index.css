@@ -175,31 +175,11 @@ h2 {
   padding-top: 120px;
 }
 
-.section-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.5fr);
-  gap: 60px;
-  align-items: end;
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 54px;
-}
-
-.section-heading h2 {
-  font-size: clamp(2.5rem, 6.5vw, 6.5rem);
-  margin: 0;
-}
-
-.section-heading > p {
-  max-width: 430px;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
 .portfolio-filter {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  padding: 32px 0 56px;
+  padding: 12px 0 56px;
 }
 
 .filter-btn {
@@ -481,7 +461,6 @@ footer {
 
 @media (max-width: 768px) {
   .split-grid,
-  .section-heading,
   .journey-section {
     grid-template-columns: 1fr;
   }
@@ -505,9 +484,6 @@ footer {
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 60px;
-  }
-  .section-heading {
-    gap: 28px;
   }
   .journey-section {
     gap: 45px;
