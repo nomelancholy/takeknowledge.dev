@@ -109,6 +109,16 @@ const portfolioItems = [
     qrCodeUrl: "assets/abuteukgongdae-qr.png",
   },
   {
+    category: "app",
+    appPlatform: "toss",
+    title: "QR 패스",
+    description:
+      "QR 코드는 이제 QR 패스로 패스! 촬영해야 하는 QR 코드는 물론 사진 속에 있는 QR 코드까지 모두 분석해 링크로 연결해 드립니다.",
+    linkHref: "https://minion.toss.im/Ry7A8Ijx",
+    thumbnailUrl: "assets/qr-pass-app-icon-600.png",
+    qrCodeUrl: "assets/qr-pass-qr.png",
+  },
+  {
     category: "web",
     title: "D.O.T.",
     description:
