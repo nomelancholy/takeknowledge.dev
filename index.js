@@ -59,6 +59,14 @@ const portfolioItems = [
   },
   {
     category: "web",
+    title: "D.O.T.",
+    description:
+      "도자기 공방 D.O.T.의 브랜드와 작품, 클래스 소식을 소개하는 홈페이지입니다.",
+    linkHref: "https://dayoff.today/",
+    thumbnailUrl: "assets/dot-homepage.png",
+  },
+  {
+    category: "web",
     title: "SEE VAR",
     description:
       "K League 심판 데이터를 라운드별로 정리해 보여주는 서비스입니다. 라운드 베스트/워스트, 쟁점 순간 등 정보를 한 화면에서 탐색할 수 있습니다.",
