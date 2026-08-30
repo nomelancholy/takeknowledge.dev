@@ -3,5 +3,8 @@
   "private": true,
   "scripts": {
     "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4"
   }
 }

@@ -56,6 +56,7 @@ const portfolioItems = [
       "수박을 톡톡 두드려 소리를 들려주세요. 수박감별사가 두드림 소리와 겉모습을 바탕으로 잘 익은 수박인지 쉽고 재미있게 확인해 드려요. 감별 결과를 기록하고, 당도와 식감까지 별점으로 남겨 나만의 맛있는 수박 고르는 감각을 키워보세요!",
     linkHref: "https://minion.toss.im/JSy41Vzj",
     thumbnailUrl: "assets/watermelon-inspector-app-icon.png",
+    qrCodeUrl: "assets/watermelon-inspector-qr.png",
   },
   {
     category: "web",
@@ -151,7 +152,16 @@ function renderPortfolio() {
     const link = node.querySelector(".portfolio-link");
     link.childNodes[0].textContent = item.category === "app" ? "OPEN IN TOSS " : "OPEN PROJECT ";
     titleLink.textContent = item.title;
-    [titleLink, imageLink, link].forEach((anchor) => anchor.setAttribute("href", item.linkHref));
+    [titleLink, imageLink, link].forEach((anchor) => {
+      anchor.setAttribute("href", item.linkHref);
+      if (item.category === "app" && item.qrCodeUrl) {
+        anchor.addEventListener("click", (event) => {
+          if (isMobileDevice()) return;
+          event.preventDefault();
+          openTossQrDialog(item);
+        });
+      }
+    });
 
     const platform = node.querySelector(".portfolio-platform");
     if (item.category === "app" && item.appPlatform) {
@@ -171,6 +181,33 @@ function renderPortfolio() {
   });
 
   updatePortfolioImages();
+}
+
+function isMobileDevice() {
+  const mobileUserAgent = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const touchMac = navigator.userAgent.includes("Mac") && navigator.maxTouchPoints > 1;
+  return mobileUserAgent || touchMac;
+}
+
+function openTossQrDialog(item) {
+  const dialog = document.getElementById("toss-qr-dialog");
+  if (!dialog) return;
+
+  dialog.querySelector("#toss-qr-title").textContent = item.title;
+  const image = dialog.querySelector("#toss-qr-image");
+  image.src = item.qrCodeUrl;
+  image.alt = `${item.title} 토스 미니앱 QR 코드`;
+
+  if (typeof dialog.showModal === "function") dialog.showModal();
+  else dialog.setAttribute("open", "");
+}
+
+function setupTossQrDialog() {
+  const dialog = document.getElementById("toss-qr-dialog");
+  if (!dialog) return;
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
 }
 
 function setupPortfolioFilters() {
@@ -230,6 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPortfolio();
   setupPortfolioFilters();
   setupJourneyToggle();
+  setupTossQrDialog();
 
   const sections = document.querySelectorAll("section");
   const observer = new IntersectionObserver(

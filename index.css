@@ -326,6 +326,70 @@ h2 {
   margin-top: 12px;
 }
 
+/* Toss mini app QR */
+.toss-qr-dialog {
+  width: min(440px, calc(100% - 32px));
+  max-width: none;
+  padding: 0;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 14px 14px 0 var(--ink);
+}
+
+.toss-qr-dialog::backdrop {
+  background: rgba(26, 26, 26, 0.72);
+  backdrop-filter: blur(3px);
+}
+
+.toss-qr-content {
+  position: relative;
+  padding: 42px;
+  text-align: center;
+}
+
+.toss-qr-content .section-label {
+  margin-bottom: 10px;
+}
+
+.toss-qr-content h3 {
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.toss-qr-content > p {
+  margin: 12px 0 24px;
+  line-height: 1.6;
+}
+
+.toss-qr-content img {
+  display: block;
+  width: min(280px, 100%);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border: 1px solid var(--ink);
+}
+
+.toss-qr-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 300 2rem/1 "Outfit", sans-serif;
+  cursor: pointer;
+}
+
+.toss-qr-note {
+  display: block;
+  margin-top: 18px;
+  font: 0.68rem/1.5 "Roboto Mono", monospace;
+  opacity: 0.62;
+}
+
 /* Journey */
 .journey-section {
   display: grid;
@@ -480,5 +544,8 @@ footer {
   }
   .journey-index {
     flex-direction: row;
+  }
+  .toss-qr-content {
+    padding: 38px 24px 28px;
   }
 }
