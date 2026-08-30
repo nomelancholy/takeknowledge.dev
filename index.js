@@ -63,7 +63,7 @@ const portfolioItems = [
     appPlatform: "toss",
     title: "BIG5 성격검사",
     description:
-      "50개의 문항에 5단계로 답하면 개방성, 성실성, 외향성, 우호성, 정서 민감도 점수를 확인할 수 있어요. 검사를 모두 마친 뒤 OCEAN 그래프와 성향별 상세 해석이 공개돼요. 점수의 높고 낮음이 일상에서 어떤 의미인지 확인할 수 있고, 강점 조합과 균형 포인트, 생활 속 힌트도 함께 제공해요.",
+      "MBTI가 식상한가요? 이제 전 세계 성격 심리학자들에게 신뢰받고 있는 검증된 BIG 5 검사를 해보세요. 50개의 문항에 5단계로 답하면 개방성, 성실성, 외향성, 우호성, 정서 민감도 점수를 확인할 수 있어요. 검사를 모두 마친 뒤 OCEAN 그래프와 성향별 상세 해석이 공개돼요. 점수의 높고 낮음이 일상에서 어떤 의미인지 확인할 수 있고, 강점 조합과 균형 포인트, 생활 속 힌트도 함께 제공해요.",
     linkHref: "https://minion.toss.im/tPE2QyIy",
     thumbnailUrl: "assets/ocean-app-logo-600.png",
     qrCodeUrl: "assets/big5-ocean-qr.png",
