@@ -92,7 +92,6 @@ const appPlatformLabels = {
 };
 
 let activeCategory = "all";
-let portfolioImages = [];
 
 function cloneTemplate(templateId) {
   const template = document.getElementById(templateId);
@@ -180,7 +179,6 @@ function renderPortfolio() {
     container.appendChild(node);
   });
 
-  updatePortfolioImages();
 }
 
 function isMobileDevice() {
@@ -244,21 +242,6 @@ function setupJourneyToggle() {
     button.childNodes[0].textContent = isExpanded ? "전체 이야기 읽기 " : "이야기 접기 ";
   });
 }
-
-function updatePortfolioImages() {
-  portfolioImages = Array.from(document.querySelectorAll(".portfolio-image"));
-}
-
-// Simple Parallax Effect for "Tactile" feel
-window.addEventListener("mousemove", (e) => {
-  if (!portfolioImages.length) updatePortfolioImages();
-  const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-  const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-
-  portfolioImages.forEach((img) => {
-    img.style.transform = `translate(${moveX}px, ${moveY}px)`;
-  });
-});
 
 // Entry animation and rendering
 document.addEventListener("DOMContentLoaded", () => {
