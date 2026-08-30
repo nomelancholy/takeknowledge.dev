@@ -89,6 +89,16 @@ const portfolioItems = [
     qrCodeUrl: "assets/fitpocket-qr.png",
   },
   {
+    category: "app",
+    appPlatform: "toss",
+    title: "니가 진짜 원하는 게 뭐야",
+    description:
+      "방향을 잃기 쉬운 세상. 당신이 진짜 원하는 게 뭔지 주기적으로 물어드립니다.",
+    linkHref: "https://minion.toss.im/FNdeWT0k",
+    thumbnailUrl: "assets/what-do-you-really-want-app-logo.png",
+    qrCodeUrl: "assets/what-do-you-really-want-qr.png",
+  },
+  {
     category: "web",
     title: "D.O.T.",
     description:
