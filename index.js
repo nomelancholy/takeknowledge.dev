@@ -69,6 +69,16 @@ const portfolioItems = [
     qrCodeUrl: "assets/big5-ocean-qr.png",
   },
   {
+    category: "app",
+    appPlatform: "toss",
+    title: "나의 에너지 설계도",
+    description:
+      "이름과 생년월일, 출생시간, 출생지를 입력하면 나만의 휴먼디자인 에너지 설계도를 만나볼 수 있어요. 나는 어떤 방식으로 에너지를 쓰는 사람일까요? 먼저 나의 에너지 유형을 알아보고, 에너지가 자연스럽게 흐르는 방식과 중요한 순간에 나에게 맞는 선택의 기준을 확인해보세요. 일과 관계, 일상 속에서 지금 나다운 방향으로 가고 있을 때 나타나는 신호와, 잠시 멈춰 나를 돌아볼 필요가 있을 때 나타나는 신호도 알기 쉽게 풀어드려요.",
+    linkHref: "https://minion.toss.im/HV93PDjm",
+    thumbnailUrl: "assets/my-energy-blueprint-app-icon.png",
+    qrCodeUrl: "assets/my-energy-blueprint-qr.png",
+  },
+  {
     category: "web",
     title: "D.O.T.",
     description:
