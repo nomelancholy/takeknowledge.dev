@@ -67,6 +67,15 @@
       </div>
 
       <div class="portfolio-grid" id="portfolio-grid" aria-live="polite"></div>
+      <nav class="portfolio-pagination" id="portfolio-pagination" aria-label="포트폴리오 페이지" hidden>
+        <button class="pagination-btn" id="portfolio-prev" type="button" aria-label="이전 포트폴리오 페이지">
+          <span aria-hidden="true">←</span> PREV
+        </button>
+        <span class="pagination-status" id="portfolio-page-status" aria-live="polite"></span>
+        <button class="pagination-btn" id="portfolio-next" type="button" aria-label="다음 포트폴리오 페이지">
+          NEXT <span aria-hidden="true">→</span>
+        </button>
+      </nav>
       <div class="portfolio-empty" id="portfolio-empty" hidden>
         <span>COMING NEXT</span>
         <p>이 분야의 새로운 작업을 준비하고 있습니다.</p>

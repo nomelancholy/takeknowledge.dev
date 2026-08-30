@@ -102,6 +102,12 @@ const appPlatformLabels = {
 };
 
 let activeCategory = "all";
+let activePortfolioPage = 1;
+let portfolioPageSize = getPortfolioPageSize();
+
+function getPortfolioPageSize() {
+  return window.matchMedia("(max-width: 768px)").matches ? 2 : 4;
+}
 
 function cloneTemplate(templateId) {
   const template = document.getElementById(templateId);
@@ -148,12 +154,17 @@ function renderPortfolio() {
   );
   if (emptyState) emptyState.hidden = visibleItems.length > 0;
 
-  visibleItems.forEach((item, index) => {
+  const totalPages = Math.max(1, Math.ceil(visibleItems.length / portfolioPageSize));
+  activePortfolioPage = Math.min(activePortfolioPage, totalPages);
+  const pageStart = (activePortfolioPage - 1) * portfolioPageSize;
+  const pageItems = visibleItems.slice(pageStart, pageStart + portfolioPageSize);
+
+  pageItems.forEach((item, index) => {
     const node = cloneTemplate("portfolio-card-template");
     if (!node) return;
     node.dataset.category = item.category;
     node.querySelector(".portfolio-category").textContent = categoryLabels[item.category] || item.category;
-    node.querySelector(".portfolio-sequence").textContent = String(index + 1).padStart(2, "0");
+    node.querySelector(".portfolio-sequence").textContent = String(pageStart + index + 1).padStart(2, "0");
     node.querySelector("p").textContent = item.description;
 
     const titleLink = node.querySelector("h3 a");
@@ -189,6 +200,41 @@ function renderPortfolio() {
     container.appendChild(node);
   });
 
+  updatePortfolioPagination(visibleItems.length, totalPages);
+}
+
+function updatePortfolioPagination(itemCount, totalPages) {
+  const pagination = document.getElementById("portfolio-pagination");
+  const previousButton = document.getElementById("portfolio-prev");
+  const nextButton = document.getElementById("portfolio-next");
+  const status = document.getElementById("portfolio-page-status");
+  if (!pagination || !previousButton || !nextButton || !status) return;
+
+  pagination.hidden = itemCount === 0 || totalPages <= 1;
+  previousButton.disabled = activePortfolioPage === 1;
+  nextButton.disabled = activePortfolioPage === totalPages;
+  status.textContent = `${String(activePortfolioPage).padStart(2, "0")} / ${String(totalPages).padStart(2, "0")}`;
+}
+
+function movePortfolioPage(direction) {
+  activePortfolioPage += direction;
+  renderPortfolio();
+  const grid = document.getElementById("portfolio-grid");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  grid?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+}
+
+function setupPortfolioPagination() {
+  document.getElementById("portfolio-prev")?.addEventListener("click", () => movePortfolioPage(-1));
+  document.getElementById("portfolio-next")?.addEventListener("click", () => movePortfolioPage(1));
+
+  window.addEventListener("resize", () => {
+    const nextPageSize = getPortfolioPageSize();
+    if (nextPageSize === portfolioPageSize) return;
+    portfolioPageSize = nextPageSize;
+    activePortfolioPage = 1;
+    renderPortfolio();
+  });
 }
 
 function isMobileDevice() {
@@ -230,6 +276,7 @@ function setupPortfolioFilters() {
     btn.querySelector("span").textContent = String(count).padStart(2, "0");
     btn.addEventListener("click", () => {
       activeCategory = category;
+      activePortfolioPage = 1;
       document.querySelectorAll(".filter-btn").forEach((filterBtn) => {
         const isActive = filterBtn === btn;
         filterBtn.classList.toggle("is-active", isActive);
@@ -259,6 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSkills();
   renderPortfolio();
   setupPortfolioFilters();
+  setupPortfolioPagination();
   setupJourneyToggle();
   setupTossQrDialog();
 
