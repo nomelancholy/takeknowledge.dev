@@ -328,8 +328,14 @@ h2 {
 
 /* Toss mini app QR */
 .toss-qr-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: min(440px, calc(100% - 32px));
   max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: 0;
   padding: 0;
   border: 2px solid var(--ink);
   background: var(--paper);
