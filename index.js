@@ -99,6 +99,16 @@ const portfolioItems = [
     qrCodeUrl: "assets/what-do-you-really-want-qr.png",
   },
   {
+    category: "app",
+    appPlatform: "toss",
+    title: "아부특공대",
+    description:
+      "지치거나 마음이 흔들릴 때 아부특공대를 찾아주세요. 조카, 엄마, 아빠, 할머니, 할아버지, 상사, 선생님 중 한 명을 골라 무조건적인 칭찬과 편들기를 받을 수 있어요. AI를 활용한 맞춤 응원도 기다리고 있습니다.",
+    linkHref: "https://minion.toss.im/PnIxOIlf",
+    thumbnailUrl: "assets/abuteukgongdae-family-logo-600.png",
+    qrCodeUrl: "assets/abuteukgongdae-qr.png",
+  },
+  {
     category: "web",
     title: "D.O.T.",
     description:
