@@ -45,14 +45,6 @@ const skillTags = [
 const portfolioItems = [
   {
     category: "web",
-    title: "Beacon Port",
-    description:
-      "복잡한 이력서 관리를 직관적인 UX와 AI 협업으로 풀어낸 퍼스널 브랜딩 플랫폼입니다. 단순한 문서 저장을 넘어, 개인의 역량을 가장 빛나는 신호로 바꾸어 전달합니다.",
-    linkHref: "https://www.beaconport.online/",
-    thumbnailUrl: "assets/beacon-port.png",
-  },
-  {
-    category: "web",
     title: "SEE VAR",
     description:
       "K League 심판 데이터를 라운드별로 정리해 보여주는 서비스입니다. 라운드 베스트/워스트, 쟁점 순간 등 정보를 한 화면에서 탐색할 수 있습니다.",
