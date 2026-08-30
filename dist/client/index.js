@@ -1,5 +1,10 @@
 const careerItems = [
   {
+    date: "2026",
+    title: "기아렌터카 관리 시스템 운영 프로젝트",
+    description: "대고객, 판매, 관리 시스템 연동 운영",
+  },
+  {
     date: "2022 — 2025",
     title: "LG 전자 ThinQ App 개발 프로젝트",
     description:

@@ -236,6 +236,8 @@ h2 {
 .portfolio-card[data-category="app"] .portfolio-image img {
   padding: 5%;
   object-fit: contain;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 .portfolio-card:hover img {
