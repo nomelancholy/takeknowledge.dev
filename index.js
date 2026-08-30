@@ -79,6 +79,16 @@ const portfolioItems = [
     qrCodeUrl: "assets/my-energy-blueprint-qr.png",
   },
   {
+    category: "app",
+    appPlatform: "toss",
+    title: "운동 주머니",
+    description:
+      "인스타, 유튜브 재생목록에 저장만 해놓던 운동 영상, 이제는 원하는 시간에 알림 받고 실제로 해보세요.",
+    linkHref: "https://minion.toss.im/JLbpfswh",
+    thumbnailUrl: "assets/fitpocket-app-logo-600.png",
+    qrCodeUrl: "assets/fitpocket-qr.png",
+  },
+  {
     category: "web",
     title: "D.O.T.",
     description:
