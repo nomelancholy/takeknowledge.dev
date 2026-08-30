@@ -229,6 +229,15 @@ h2 {
   transition: all 0.5s ease;
 }
 
+.portfolio-card[data-category="app"] .portfolio-image {
+  background: #f7f7f5;
+}
+
+.portfolio-card[data-category="app"] .portfolio-image img {
+  padding: 5%;
+  object-fit: contain;
+}
+
 .portfolio-card:hover img {
   filter: grayscale(0) contrast(1);
   mix-blend-mode: normal;

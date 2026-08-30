@@ -44,6 +44,15 @@ const skillTags = [
 
 const portfolioItems = [
   {
+    category: "app",
+    appPlatform: "toss",
+    title: "수박감별사",
+    description:
+      "수박을 톡톡 두드려 소리를 들려주세요. 수박감별사가 두드림 소리와 겉모습을 바탕으로 잘 익은 수박인지 쉽고 재미있게 확인해 드려요. 감별 결과를 기록하고, 당도와 식감까지 별점으로 남겨 나만의 맛있는 수박 고르는 감각을 키워보세요!",
+    linkHref: "https://minion.toss.im/JSy41Vzj",
+    thumbnailUrl: "assets/watermelon-inspector-app-icon.png",
+  },
+  {
     category: "web",
     title: "SEE VAR",
     description:
@@ -119,6 +128,7 @@ function renderPortfolio() {
   visibleItems.forEach((item, index) => {
     const node = cloneTemplate("portfolio-card-template");
     if (!node) return;
+    node.dataset.category = item.category;
     node.querySelector(".portfolio-category").textContent = categoryLabels[item.category] || item.category;
     node.querySelector(".portfolio-sequence").textContent = String(index + 1).padStart(2, "0");
     node.querySelector("p").textContent = item.description;
@@ -126,6 +136,7 @@ function renderPortfolio() {
     const titleLink = node.querySelector("h3 a");
     const imageLink = node.querySelector(".portfolio-image");
     const link = node.querySelector(".portfolio-link");
+    link.childNodes[0].textContent = item.category === "app" ? "OPEN IN TOSS " : "OPEN PROJECT ";
     titleLink.textContent = item.title;
     [titleLink, imageLink, link].forEach((anchor) => anchor.setAttribute("href", item.linkHref));
 
