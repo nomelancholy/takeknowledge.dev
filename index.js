@@ -120,6 +120,14 @@ const portfolioItems = [
   },
   {
     category: "web",
+    title: "A4 Sticky Guide",
+    description:
+      "포스트잇 규격을 선택하고 원하는 내용과 글꼴을 배치해 A4 용지에 딱 맞게 인쇄할 수 있는 포스트잇 인쇄 가이드 서비스입니다.",
+    linkHref: "https://a4-sticky-guide.vercel.app/",
+    thumbnailUrl: "assets/a4-sticky-guide.png",
+  },
+  {
+    category: "web",
     title: "D.O.T.",
     description:
       "도자기 공방 D.O.T.의 브랜드와 작품, 클래스 소식을 소개하는 홈페이지입니다.",
