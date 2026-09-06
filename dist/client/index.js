@@ -162,6 +162,23 @@ const appPlatformLabels = {
 let activeCategory = "all";
 let activePortfolioPage = 1;
 let portfolioPageSize = getPortfolioPageSize();
+let randomizedPortfolioItems = shufflePortfolioItems(portfolioItems);
+
+function shufflePortfolioItems(items) {
+  const shuffledItems = [...items];
+
+  for (let index = shuffledItems.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [shuffledItems[index], shuffledItems[randomIndex]] = [shuffledItems[randomIndex], shuffledItems[index]];
+  }
+
+  const orderDidNotChange = shuffledItems.every((item, index) => item === items[index]);
+  if (orderDidNotChange && shuffledItems.length > 1) {
+    shuffledItems.push(shuffledItems.shift());
+  }
+
+  return shuffledItems;
+}
 
 function getPortfolioPageSize() {
   return window.matchMedia("(max-width: 768px)").matches ? 2 : 4;
@@ -207,9 +224,9 @@ function renderPortfolio() {
   if (!container) return;
   container.innerHTML = "";
 
-  const visibleItems = portfolioItems.filter(
-    (item) => activeCategory === "all" || item.category === activeCategory,
-  );
+  const visibleItems = activeCategory === "all"
+    ? randomizedPortfolioItems
+    : portfolioItems.filter((item) => item.category === activeCategory);
   if (emptyState) emptyState.hidden = visibleItems.length > 0;
 
   const totalPages = Math.max(1, Math.ceil(visibleItems.length / portfolioPageSize));
@@ -335,6 +352,9 @@ function setupPortfolioFilters() {
     btn.addEventListener("click", () => {
       activeCategory = category;
       activePortfolioPage = 1;
+      if (category === "all") {
+        randomizedPortfolioItems = shufflePortfolioItems(randomizedPortfolioItems);
+      }
       document.querySelectorAll(".filter-btn").forEach((filterBtn) => {
         const isActive = filterBtn === btn;
         filterBtn.classList.toggle("is-active", isActive);
