@@ -142,7 +142,14 @@ const portfolioItems = [
     linkHref: "https://seevar.online/",
     thumbnailUrl: "assets/seevar.png",
   },
-
+  {
+    category: "lecture",
+    title: "바이브 코딩으로 배우는 웹 개발 '호박마켓 따라 만들기'",
+    description:
+      "HTML, CSS, JavaScript부터 Supabase를 활용한 데이터베이스와 로그인, 이미지 저장, Vercel 배포까지 간단한 중고거래 웹 서비스를 직접 만들며 웹 개발의 기본 개념을 익히는 강의입니다.",
+    linkHref: "https://opentutorials.org/course/5314",
+    thumbnailUrl: "assets/opentutorials-pumpkin-market-course.png",
+  },
 ];
 
 const categoryLabels = {
@@ -157,6 +164,11 @@ const appPlatformLabels = {
   appstore: "App Store",
   playstore: "Play Store",
   multiplatform: "App Store · Play Store",
+};
+
+const portfolioLinkLabels = {
+  app: "OPEN IN TOSS ",
+  lecture: "OPEN LECTURE ",
 };
 
 let activeCategory = "all";
@@ -245,7 +257,7 @@ function renderPortfolio() {
     const titleLink = node.querySelector("h3 a");
     const imageLink = node.querySelector(".portfolio-image");
     const link = node.querySelector(".portfolio-link");
-    link.childNodes[0].textContent = item.category === "app" ? "OPEN IN TOSS " : "OPEN PROJECT ";
+    link.childNodes[0].textContent = portfolioLinkLabels[item.category] || "OPEN PROJECT ";
     titleLink.textContent = item.title;
     [titleLink, imageLink, link].forEach((anchor) => {
       anchor.setAttribute("href", item.linkHref);
