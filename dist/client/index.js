@@ -91,26 +91,6 @@ const portfolioItems = [
   {
     category: "app",
     appPlatform: "toss",
-    title: "니가 진짜 원하는 게 뭐야",
-    description:
-      "방향을 잃기 쉬운 세상. 당신이 진짜 원하는 게 뭔지 주기적으로 물어드립니다.",
-    linkHref: "https://minion.toss.im/FNdeWT0k",
-    thumbnailUrl: "assets/what-do-you-really-want-app-logo.png",
-    qrCodeUrl: "assets/what-do-you-really-want-qr.png",
-  },
-  {
-    category: "app",
-    appPlatform: "toss",
-    title: "아부특공대",
-    description:
-      "지치거나 마음이 흔들릴 때 아부특공대를 찾아주세요. 조카, 엄마, 아빠, 할머니, 할아버지, 상사, 선생님 중 한 명을 골라 무조건적인 칭찬과 편들기를 받을 수 있어요. AI를 활용한 맞춤 응원도 기다리고 있습니다.",
-    linkHref: "https://minion.toss.im/PnIxOIlf",
-    thumbnailUrl: "assets/abuteukgongdae-family-logo-600.png",
-    qrCodeUrl: "assets/abuteukgongdae-qr.png",
-  },
-  {
-    category: "app",
-    appPlatform: "toss",
     title: "QR 패스",
     description:
       "QR 코드는 이제 QR 패스로 패스! 촬영해야 하는 QR 코드는 물론 사진 속에 있는 QR 코드까지 모두 분석해 링크로 연결해 드립니다.",
