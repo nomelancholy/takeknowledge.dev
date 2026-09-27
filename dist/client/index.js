@@ -100,6 +100,14 @@ const portfolioItems = [
   },
   {
     category: "web",
+    title: "Supa Map",
+    description:
+      "여러 Supabase 계정과 프로젝트를 한곳에서 정리하고, 무료 프로젝트 배정 현황을 한눈에 관리할 수 있는 개인 보드 서비스입니다.",
+    linkHref: "https://supamap.vercel.app/",
+    thumbnailUrl: "assets/supa-map.png",
+  },
+  {
+    category: "web",
     title: "A4 Sticky Guide",
     description:
       "포스트잇 규격을 선택하고 원하는 내용과 글꼴을 배치해 A4 용지에 딱 맞게 인쇄할 수 있는 포스트잇 인쇄 가이드 서비스입니다.",
