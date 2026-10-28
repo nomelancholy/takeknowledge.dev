@@ -45,16 +45,18 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
     <header>
-      <div class="logo debossed-text">Take Knowledge</div>
+      <a class="logo debossed-text logo-link" href="index.html">Take Knowledge</a>
       <nav aria-label="주요 메뉴">
-        <a href="#portfolio">Portfolio</a>
-        <!-- <a href="#journey">Journey</a> -->
-        <a href="#about">Career</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Main</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="career.html">Career</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </header>
 
+    <main id="main">
     <section id="portfolio">
       <span class="section-label">// Portfolio</span>
 
@@ -66,20 +68,21 @@
         <button class="filter-btn" type="button" data-category="lecture" role="tab" aria-selected="false">Lecture <span></span></button>
       </div>
 
-      <div class="portfolio-grid" id="portfolio-grid" aria-live="polite"></div>
-      <nav class="portfolio-pagination" id="portfolio-pagination" aria-label="포트폴리오 페이지" hidden>
-        <button class="pagination-btn" id="portfolio-prev" type="button" aria-label="이전 포트폴리오 페이지">
-          <span aria-hidden="true">←</span> PREV
+      <div class="portfolio-carousel" id="portfolio-carousel" role="region" aria-roledescription="캐러셀" aria-label="포트폴리오 둘러보기">
+        <button class="carousel-arrow carousel-prev" id="portfolio-prev" type="button" aria-label="이전 포트폴리오" aria-controls="portfolio-grid">
+          <span aria-hidden="true">←</span>
         </button>
-        <span class="pagination-status" id="portfolio-page-status" aria-live="polite"></span>
-        <button class="pagination-btn" id="portfolio-next" type="button" aria-label="다음 포트폴리오 페이지">
-          NEXT <span aria-hidden="true">→</span>
+        <div class="portfolio-grid" id="portfolio-grid" tabindex="0" aria-label="좌우 화살표 키 또는 스와이프로 포트폴리오 넘기기"></div>
+        <button class="carousel-arrow carousel-next" id="portfolio-next" type="button" aria-label="다음 포트폴리오" aria-controls="portfolio-grid">
+          <span aria-hidden="true">→</span>
         </button>
-      </nav>
+      </div>
+      <p class="pagination-status carousel-status" id="portfolio-page-status" role="status" aria-live="polite" aria-atomic="true"></p>
       <div class="portfolio-empty" id="portfolio-empty" hidden>
         <span>COMING NEXT</span>
         <p>이 분야의 새로운 작업을 준비하고 있습니다.</p>
       </div>
+      <a class="home-section-link" href="portfolio.html">전체 포트폴리오 보기 <span aria-hidden="true">→</span></a>
     </section>
 
     <!-- 글쓰기 영역: 원문 정리 후 다시 활성화
@@ -133,6 +136,7 @@
           <div class="skill-list" id="skill-list"></div>
         </div>
       </div>
+      <a class="home-section-link" href="career.html">Career 자세히 보기 <span aria-hidden="true">→</span></a>
     </section>
 
     <section id="contact">
@@ -156,8 +160,10 @@
             [ BRUNCH ]</a
           >
         </div>
+        <a class="home-section-link" href="contact.html">프로젝트 문의 안내 <span aria-hidden="true">→</span></a>
       </div>
     </section>
+    </main>
 
     <dialog class="toss-qr-dialog" id="toss-qr-dialog" aria-labelledby="toss-qr-title">
       <div class="toss-qr-content">
@@ -176,18 +182,6 @@
       &copy; 2026 TAKE KNOWLEDGE. ALL RIGHTS RESERVED. PRINTED IN DIGITAL GRAIN.
     </footer>
 
-    <template id="career-item-template">
-      <div class="career-item">
-        <div class="career-date"></div>
-        <div class="career-title"></div>
-        <p></p>
-      </div>
-    </template>
-
-    <template id="skill-tag-template">
-      <span class="skill-tag"></span>
-    </template>
-
     <template id="portfolio-card-template">
       <article class="portfolio-card">
         <a class="portfolio-image" target="_blank" rel="noreferrer">
@@ -201,11 +195,14 @@
           </div>
           <h3><a target="_blank" rel="noreferrer"></a></h3>
           <p></p>
-          <a class="portfolio-link" target="_blank" rel="noreferrer">OPEN PROJECT <span aria-hidden="true">↗</span></a>
+          <div class="portfolio-actions">
+            <a class="portfolio-detail-link">상세 보기 <span aria-hidden="true">→</span></a>
+            <a class="portfolio-link" target="_blank" rel="noreferrer">OPEN PROJECT <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </article>
     </template>
 
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

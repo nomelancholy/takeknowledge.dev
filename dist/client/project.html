@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서비스 상세 | Take Knowledge</title>
+    <meta name="description" content="Take Knowledge의 웹 서비스, 앱, 강의 소개와 주요 기능을 확인하세요." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <header>
+      <a class="logo debossed-text logo-link" href="index.html">Take Knowledge</a>
+      <nav aria-label="주요 메뉴">
+        <a href="index.html">Main</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="career.html">Career</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="project-detail-section" id="project-detail" aria-labelledby="project-title" hidden>
+        <a class="project-back-link" href="portfolio.html" data-portfolio-link>← 포트폴리오로</a>
+        <div class="project-detail-hero">
+          <div class="project-detail-art"><img id="project-icon" alt="" width="600" height="600" /></div>
+          <div class="project-detail-copy">
+            <span class="section-label">// Made by Take Knowledge</span>
+            <div class="portfolio-meta"><span class="portfolio-category" id="project-category"></span><span class="portfolio-platform" id="project-platform" hidden></span></div>
+            <h1 id="project-title"></h1>
+            <p class="project-detail-description" id="project-description"></p>
+            <div class="project-card-tags" id="project-tags"></div>
+            <div class="project-launch-actions" id="project-detail-actions" role="group" aria-label="서비스 이용 및 후원">
+              <a class="action-button action-primary" id="project-launch" target="_blank" rel="noopener noreferrer"><span id="project-launch-label">서비스 열기</span> <span aria-hidden="true">↗</span></a>
+              <div class="donation-control">
+                <a class="action-button kakao-donation" id="kakao-donation" role="link" aria-disabled="true" aria-describedby="donation-note">카카오페이로 후원하기 <span aria-hidden="true">↗</span></a>
+                <p class="donation-note" id="donation-note">후원은 준비 중이에요.</p>
+              </div>
+            </div>
+            <p class="project-launch-note" id="project-launch-note">휴대폰에서는 토스 앱으로 연결되고, PC에서는 QR 코드를 안내해요.</p>
+          </div>
+        </div>
+        <div class="project-detail-body" id="project-detail-body">
+          <div class="project-feature-content">
+            <span class="section-label">// What it does</span>
+            <h2 id="project-feature-title">이렇게 활용해 보세요.</h2>
+            <ul class="project-feature-list" id="project-features"></ul>
+          </div>
+          <aside class="project-open-guide" id="project-open-guide" hidden aria-labelledby="open-guide-title">
+            <span class="section-label">// Scan & Open</span>
+            <h2 id="open-guide-title">휴대폰으로 바로 열기</h2>
+            <img id="project-qr" alt="" width="220" height="220" />
+            <p>휴대폰 카메라로 QR 코드를 스캔해 주세요.<br />토스 앱이 설치된 기기에서 이용할 수 있어요.</p>
+          </aside>
+        </div>
+        <aside class="project-support" aria-labelledby="project-support-title">
+          <div class="project-support-copy">
+            <span class="section-label">// Discover More</span>
+            <h2 id="project-support-title">다른 작업도 둘러보세요.</h2>
+            <p>웹 서비스부터 앱과 강의까지, 더 많은 작업을 만나보세요.</p>
+          </div>
+          <a class="action-button project-discover-link" id="project-portfolio-link" href="portfolio.html" data-portfolio-link>포트폴리오 둘러보기 <span aria-hidden="true">→</span></a>
+        </aside>
+      </section>
+      <section class="project-not-found" id="project-not-found" aria-labelledby="not-found-title" hidden>
+        <span class="section-label">// Project not found</span>
+        <h1 id="not-found-title">작업을 찾을 수 없어요.</h1>
+        <p>주소를 확인하거나 포트폴리오에서 다시 찾아보세요.</p>
+        <a class="action-button" href="portfolio.html">포트폴리오 보기 <span aria-hidden="true">→</span></a>
+      </section>
+      <noscript><section><p>서비스 상세 정보를 보려면 브라우저에서 JavaScript를 활성화해 주세요.</p><a href="index.html">포트폴리오로 돌아가기</a></section></noscript>
+    </main>
+    <dialog class="toss-qr-dialog" id="toss-qr-dialog" aria-labelledby="toss-qr-title">
+      <div class="toss-qr-content">
+        <form method="dialog"><button class="toss-qr-close" type="submit" aria-label="QR 안내 닫기">×</button></form>
+        <span class="section-label">// Open in Toss</span>
+        <h3 id="toss-qr-title"></h3>
+        <p>휴대폰 카메라로 QR 코드를 스캔해<br />토스에서 바로 열어보세요.</p>
+        <img id="toss-qr-image" alt="" />
+        <span class="toss-qr-note">토스 앱이 설치된 모바일 기기에서 이용할 수 있습니다.</span>
+      </div>
+    </dialog>
+    <footer>&copy; 2026 TAKE KNOWLEDGE. ALL RIGHTS RESERVED. PRINTED IN DIGITAL GRAIN.</footer>
+    <script type="module" src="project-detail.js"></script>
+  </body>
+</html>

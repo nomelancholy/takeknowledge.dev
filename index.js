@@ -1,167 +1,14 @@
-const careerItems = [
-  {
-    date: "2026",
-    title: "기아렌터카 관리 시스템 운영 프로젝트",
-    description: "대고객, 판매, 관리 시스템 연동 운영",
-  },
-  {
-    date: "2022 — 2025",
-    title: "LG 전자 ThinQ App 개발 프로젝트",
-    description:
-      "Aqara, Hejhome, Matter, Homey IOT 기기와 ThinQ 앱 연동 및 UI 개발 수행",
-  },
-  {
-    date: "2021 — 2022",
-    title: "Fast Five Five Spot 프로젝트",
-    description: "Five Spot 고객용 모바일 웹사이트 일부와 관리자용 사이트 프론트엔드 개발 수행",
-  },
-  {
-    date: "2018 — 2020",
-    title: "그 외 다수 SI 프로젝트 참여",
-    description: "삼성 전자, 현대 자동차, 우리 카드, 기업 은행 등 다수 SI 프로젝트 참여",
-  },
-];
-
-const skillTags = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Tailwind CSS",
-  "Styled Components",
-  "Recoil",
-  "Redux",
-  "PostgreSQL",
-  "Supabase",
-  "MySQL",
-
-  "Git",
-  "Python",
-  "Django",
-  "Java",
-  "Kotlin",
-  "Spring Boot",
-  "AWS",
-  "Azure"
-];
-
-const portfolioItems = [
-  {
-    category: "app",
-    appPlatform: "toss",
-    title: "수박감별사",
-    description:
-      "수박을 톡톡 두드려 소리를 들려주세요. 수박감별사가 두드림 소리와 겉모습을 바탕으로 잘 익은 수박인지 쉽고 재미있게 확인해 드려요. 감별 결과를 기록하고, 당도와 식감까지 별점으로 남겨 나만의 맛있는 수박 고르는 감각을 키워보세요!",
-    linkHref: "https://minion.toss.im/JSy41Vzj",
-    thumbnailUrl: "assets/watermelon-inspector-app-icon.png",
-    qrCodeUrl: "assets/watermelon-inspector-qr.png",
-  },
-  {
-    category: "app",
-    appPlatform: "toss",
-    title: "BIG5 성격검사",
-    description:
-      "MBTI가 식상한가요? 이제 전 세계 성격 심리학자들에게 신뢰받고 있는 검증된 BIG 5 검사를 해보세요. 50개의 문항에 5단계로 답하면 개방성, 성실성, 외향성, 우호성, 정서 민감도 점수를 확인할 수 있어요. 검사를 모두 마친 뒤 OCEAN 그래프와 성향별 상세 해석이 공개돼요. 점수의 높고 낮음이 일상에서 어떤 의미인지 확인할 수 있고, 강점 조합과 균형 포인트, 생활 속 힌트도 함께 제공해요.",
-    linkHref: "https://minion.toss.im/tPE2QyIy",
-    thumbnailUrl: "assets/ocean-app-logo-600.png",
-    qrCodeUrl: "assets/big5-ocean-qr.png",
-  },
-  {
-    category: "app",
-    appPlatform: "toss",
-    title: "나의 에너지 설계도",
-    description:
-      "이제는 사주 팔자 대신 휴먼 디자인! 이름과 생년월일, 출생시간, 출생지를 입력하면 나만의 휴먼디자인 에너지 설계도를 만나볼 수 있어요. 나는 어떤 방식으로 에너지를 쓰는 사람일까요?",
-    linkHref: "https://minion.toss.im/HV93PDjm",
-    thumbnailUrl: "assets/my-energy-blueprint-app-icon.png",
-    qrCodeUrl: "assets/my-energy-blueprint-qr.png",
-  },
-  {
-    category: "app",
-    appPlatform: "toss",
-    title: "운동 주머니",
-    description:
-      "인스타, 유튜브 재생목록에 저장만 해놓던 운동 영상, 이제는 원하는 시간에 알림 받고 실제로 해보세요.",
-    linkHref: "https://minion.toss.im/JLbpfswh",
-    thumbnailUrl: "assets/fitpocket-app-logo-600.png",
-    qrCodeUrl: "assets/fitpocket-qr.png",
-  },
-  {
-    category: "app",
-    appPlatform: "toss",
-    title: "QR 패스",
-    description:
-      "QR 코드는 이제 QR 패스로 패스! 촬영해야 하는 QR 코드는 물론 사진 속에 있는 QR 코드까지 모두 분석해 링크로 연결해 드립니다.",
-    linkHref: "https://minion.toss.im/Ry7A8Ijx",
-    thumbnailUrl: "assets/qr-pass-app-icon-600.png",
-    qrCodeUrl: "assets/qr-pass-qr.png",
-  },
-  {
-    category: "web",
-    title: "Supa Map",
-    description:
-      "여러 Supabase 계정과 프로젝트를 한곳에서 정리하고, 무료 프로젝트 배정 현황을 한눈에 관리할 수 있는 개인 보드 서비스입니다.",
-    linkHref: "https://supamap.vercel.app/",
-    thumbnailUrl: "assets/supa-map.png",
-  },
-  {
-    category: "web",
-    title: "A4 Sticky Guide",
-    description:
-      "포스트잇 규격을 선택하고 원하는 내용과 글꼴을 배치해 A4 용지에 딱 맞게 인쇄할 수 있는 포스트잇 인쇄 가이드 서비스입니다.",
-    linkHref: "https://a4-sticky-guide.vercel.app/",
-    thumbnailUrl: "assets/a4-sticky-guide.png",
-  },
-  {
-    category: "web",
-    title: "D.O.T.",
-    description:
-      "도자기 공방 D.O.T.의 브랜드와 작품, 클래스 소식을 소개하는 홈페이지입니다.",
-    linkHref: "https://dayoff.today/",
-    thumbnailUrl: "assets/dot-homepage.png",
-  },
-  {
-    category: "web",
-    title: "SEE VAR",
-    description:
-      "K League 심판 데이터를 라운드별로 정리해 보여주는 서비스입니다. 라운드 베스트/워스트, 쟁점 순간 등 정보를 한 화면에서 탐색할 수 있습니다.",
-    linkHref: "https://seevar.online/",
-    thumbnailUrl: "assets/seevar.png",
-  },
-  {
-    category: "lecture",
-    title: "바이브 코딩으로 배우는 웹 개발 '호박마켓 따라 만들기'",
-    description:
-      "HTML, CSS, JavaScript부터 Supabase를 활용한 데이터베이스와 로그인, 이미지 저장, Vercel 배포까지 간단한 중고거래 웹 서비스를 직접 만들며 웹 개발의 기본 개념을 익히는 강의입니다.",
-    linkHref: "https://opentutorials.org/course/5314",
-    thumbnailUrl: "assets/opentutorials-pumpkin-market-course.png",
-  },
-];
-
-const categoryLabels = {
-  web: "Web",
-  app: "App",
-  game: "Game",
-  lecture: "Lecture",
-};
-
-const appPlatformLabels = {
-  toss: "Toss Mini App",
-  appstore: "App Store",
-  playstore: "Play Store",
-  multiplatform: "App Store · Play Store",
-};
-
-const portfolioLinkLabels = {
-  app: "OPEN IN TOSS ",
-  lecture: "OPEN LECTURE ",
-};
+import "./site.js";
+import "./profile.js";
+import { portfolioItems, categoryLabels, appPlatformLabels, portfolioLinkLabels, getProjectDetailHref } from "./portfolio-data.js";
+import { isMobileDevice, openTossQrDialog, setupTossQrDialog } from "./toss-qr.js";
 
 let activeCategory = "all";
 let activePortfolioPage = 1;
 let portfolioPageSize = getPortfolioPageSize();
+let portfolioItemCount = 0;
+let requestedPortfolioPage = null;
+let portfolioScrollTimer;
 let randomizedPortfolioItems = shufflePortfolioItems(portfolioItems);
 
 function shufflePortfolioItems(items) {
@@ -181,41 +28,13 @@ function shufflePortfolioItems(items) {
 }
 
 function getPortfolioPageSize() {
-  return window.matchMedia("(max-width: 768px)").matches ? 2 : 4;
+  return window.matchMedia("(max-width: 768px)").matches ? 1 : 2;
 }
 
 function cloneTemplate(templateId) {
   const template = document.getElementById(templateId);
   if (!template || !(template instanceof HTMLTemplateElement)) return null;
   return template.content.firstElementChild?.cloneNode(true) || null;
-}
-
-function renderCareer() {
-  const container = document.getElementById("career-list");
-  if (!container) return;
-  container.innerHTML = "";
-
-  careerItems.forEach((item) => {
-    const node = cloneTemplate("career-item-template");
-    if (!node) return;
-    node.querySelector(".career-date").textContent = item.date;
-    node.querySelector(".career-title").textContent = item.title;
-    node.querySelector("p").textContent = item.description;
-    container.appendChild(node);
-  });
-}
-
-function renderSkills() {
-  const container = document.getElementById("skill-list");
-  if (!container) return;
-  container.innerHTML = "";
-
-  skillTags.forEach((tag) => {
-    const node = cloneTemplate("skill-tag-template");
-    if (!node) return;
-    node.textContent = tag;
-    container.appendChild(node);
-  });
 }
 
 function renderPortfolio() {
@@ -229,34 +48,39 @@ function renderPortfolio() {
     : portfolioItems.filter((item) => item.category === activeCategory);
   if (emptyState) emptyState.hidden = visibleItems.length > 0;
 
-  const totalPages = Math.max(1, Math.ceil(visibleItems.length / portfolioPageSize));
-  activePortfolioPage = Math.min(activePortfolioPage, totalPages);
-  const pageStart = (activePortfolioPage - 1) * portfolioPageSize;
-  const pageItems = visibleItems.slice(pageStart, pageStart + portfolioPageSize);
+  portfolioItemCount = visibleItems.length;
+  activePortfolioPage = 1;
+  requestedPortfolioPage = null;
+  clearTimeout(portfolioScrollTimer);
 
-  pageItems.forEach((item, index) => {
+  visibleItems.forEach((item, index) => {
     const node = cloneTemplate("portfolio-card-template");
     if (!node) return;
     node.dataset.category = item.category;
     node.querySelector(".portfolio-category").textContent = categoryLabels[item.category] || item.category;
-    node.querySelector(".portfolio-sequence").textContent = String(pageStart + index + 1).padStart(2, "0");
+    node.querySelector(".portfolio-sequence").textContent = String(index + 1).padStart(2, "0");
     node.querySelector("p").textContent = item.description;
 
     const titleLink = node.querySelector("h3 a");
     const imageLink = node.querySelector(".portfolio-image");
     const link = node.querySelector(".portfolio-link");
+    const detailLink = node.querySelector(".portfolio-detail-link");
     link.childNodes[0].textContent = portfolioLinkLabels[item.category] || "OPEN PROJECT ";
     titleLink.textContent = item.title;
-    [titleLink, imageLink, link].forEach((anchor) => {
-      anchor.setAttribute("href", item.linkHref);
-      if (item.category === "app" && item.qrCodeUrl) {
-        anchor.addEventListener("click", (event) => {
-          if (isMobileDevice()) return;
-          event.preventDefault();
-          openTossQrDialog(item);
-        });
-      }
+    [titleLink, imageLink].forEach((anchor) => {
+      anchor.href = getProjectDetailHref(item);
+      anchor.removeAttribute("target");
     });
+    detailLink.href = getProjectDetailHref(item);
+    detailLink.hidden = false;
+    link.href = item.linkHref;
+    if (item.category === "app" && item.qrCodeUrl) {
+      link.addEventListener("click", (event) => {
+        if (isMobileDevice()) return;
+        event.preventDefault();
+        openTossQrDialog(item);
+      });
+    }
 
     const platform = node.querySelector(".portfolio-platform");
     if (item.category === "app" && item.appPlatform) {
@@ -275,67 +99,98 @@ function renderPortfolio() {
     container.appendChild(node);
   });
 
-  updatePortfolioPagination(visibleItems.length, totalPages);
+  document.getElementById("portfolio-carousel").hidden = visibleItems.length === 0;
+  updatePortfolioSlides();
+  container.scrollTo({ left: 0, behavior: "instant" });
+  updatePortfolioPagination();
 }
 
-function updatePortfolioPagination(itemCount, totalPages) {
-  const pagination = document.getElementById("portfolio-pagination");
+function updatePortfolioSlides() {
+  const grid = document.getElementById("portfolio-grid");
+  grid.classList.toggle("has-trailing-space", portfolioItemCount % portfolioPageSize !== 0);
+  Array.from(grid.children).forEach((card, index) => {
+    card.classList.toggle("is-slide-start", index % portfolioPageSize === 0);
+  });
+}
+
+function updatePortfolioPagination() {
   const previousButton = document.getElementById("portfolio-prev");
   const nextButton = document.getElementById("portfolio-next");
   const status = document.getElementById("portfolio-page-status");
-  if (!pagination || !previousButton || !nextButton || !status) return;
+  if (!previousButton || !nextButton || !status) return;
+  const totalPages = Math.max(1, Math.ceil(portfolioItemCount / portfolioPageSize));
 
-  pagination.hidden = itemCount === 0 || totalPages <= 1;
+  status.hidden = portfolioItemCount === 0;
+  previousButton.hidden = nextButton.hidden = totalPages <= 1;
   previousButton.disabled = activePortfolioPage === 1;
   nextButton.disabled = activePortfolioPage === totalPages;
   status.textContent = `${String(activePortfolioPage).padStart(2, "0")} / ${String(totalPages).padStart(2, "0")}`;
 }
 
 function movePortfolioPage(direction) {
-  activePortfolioPage += direction;
-  renderPortfolio();
+  const totalPages = Math.max(1, Math.ceil(portfolioItemCount / portfolioPageSize));
+  activePortfolioPage = Math.max(1, Math.min(totalPages, (requestedPortfolioPage ?? activePortfolioPage) + direction));
+  requestedPortfolioPage = activePortfolioPage;
+  scrollToPortfolioPage();
+  updatePortfolioPagination();
+  schedulePortfolioScrollEnd();
+}
+
+function scrollToPortfolioPage(instant = false) {
   const grid = document.getElementById("portfolio-grid");
+  const first = grid.firstElementChild;
+  const target = grid.children[(activePortfolioPage - 1) * portfolioPageSize];
+  if (!first || !target) return;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  grid?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  grid.scrollTo({ left: target.offsetLeft - first.offsetLeft, behavior: instant || reduceMotion ? "instant" : "smooth" });
+}
+
+function syncPortfolioPage() {
+  const grid = document.getElementById("portfolio-grid");
+  const cards = grid.children;
+  if (cards.length < 2) return;
+  const stride = cards[1].offsetLeft - cards[0].offsetLeft;
+  if (!stride) return;
+  const totalPages = Math.max(1, Math.ceil(portfolioItemCount / portfolioPageSize));
+  activePortfolioPage = Math.max(1, Math.min(totalPages, Math.round(grid.scrollLeft / (stride * portfolioPageSize)) + 1));
+  updatePortfolioPagination();
+}
+
+function schedulePortfolioScrollEnd() {
+  clearTimeout(portfolioScrollTimer);
+  portfolioScrollTimer = setTimeout(() => {
+    requestedPortfolioPage = null;
+    syncPortfolioPage();
+  }, 150);
 }
 
 function setupPortfolioPagination() {
   document.getElementById("portfolio-prev")?.addEventListener("click", () => movePortfolioPage(-1));
   document.getElementById("portfolio-next")?.addEventListener("click", () => movePortfolioPage(1));
+  const grid = document.getElementById("portfolio-grid");
+  grid.addEventListener("scroll", () => {
+    if (requestedPortfolioPage === null) syncPortfolioPage();
+    schedulePortfolioScrollEnd();
+  }, { passive: true });
+  ["pointerdown", "wheel"].forEach((eventName) => {
+    grid.addEventListener(eventName, () => { requestedPortfolioPage = null; }, { passive: true });
+  });
+  grid.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    movePortfolioPage(event.key === "ArrowRight" ? 1 : -1);
+  });
 
   window.addEventListener("resize", () => {
     const nextPageSize = getPortfolioPageSize();
-    if (nextPageSize === portfolioPageSize) return;
+    const firstVisibleIndex = (activePortfolioPage - 1) * portfolioPageSize;
     portfolioPageSize = nextPageSize;
-    activePortfolioPage = 1;
-    renderPortfolio();
-  });
-}
-
-function isMobileDevice() {
-  const mobileUserAgent = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const touchMac = navigator.userAgent.includes("Mac") && navigator.maxTouchPoints > 1;
-  return mobileUserAgent || touchMac;
-}
-
-function openTossQrDialog(item) {
-  const dialog = document.getElementById("toss-qr-dialog");
-  if (!dialog) return;
-
-  dialog.querySelector("#toss-qr-title").textContent = item.title;
-  const image = dialog.querySelector("#toss-qr-image");
-  image.src = item.qrCodeUrl;
-  image.alt = `${item.title} 토스 미니앱 QR 코드`;
-
-  if (typeof dialog.showModal === "function") dialog.showModal();
-  else dialog.setAttribute("open", "");
-}
-
-function setupTossQrDialog() {
-  const dialog = document.getElementById("toss-qr-dialog");
-  if (!dialog) return;
-  dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) dialog.close();
+    activePortfolioPage = Math.floor(firstVisibleIndex / portfolioPageSize) + 1;
+    requestedPortfolioPage = activePortfolioPage;
+    updatePortfolioSlides();
+    scrollToPortfolioPage(true);
+    updatePortfolioPagination();
+    schedulePortfolioScrollEnd();
   });
 }
 
@@ -380,8 +235,6 @@ function setupJourneyToggle() {
 
 // Entry animation and rendering
 document.addEventListener("DOMContentLoaded", () => {
-  renderCareer();
-  renderSkills();
   renderPortfolio();
   setupPortfolioFilters();
   setupPortfolioPagination();

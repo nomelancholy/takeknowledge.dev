@@ -8,6 +8,9 @@ await Promise.all([
   cp("index.html", "dist/client/index.html"),
   cp("index.css", "dist/client/index.css"),
   cp("index.js", "dist/client/index.js"),
+  ...["portfolio.html", "career.html", "contact.html", "project.html", "app.html", "apps.html", "legacy-routes.js", "portfolio.js", "project-detail.js", "portfolio-data.js", "profile-data.js", "profile.js", "site.js", "toss-qr.js"].map(
+    (file) => cp(file, `dist/client/${file}`),
+  ),
   cp("assets", "dist/client/assets", { recursive: true }),
 ]);
 

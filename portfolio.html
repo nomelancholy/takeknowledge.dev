@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Take Knowledge</title>
+    <meta name="description" content="Take Knowledge의 웹 서비스, 앱, 강의를 검색하고 살펴보세요." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <header>
+      <a class="logo debossed-text logo-link" href="index.html">Take Knowledge</a>
+      <nav aria-label="주요 메뉴">
+        <a href="index.html">Main</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="career.html">Career</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="portfolio-directory" aria-labelledby="directory-title">
+        <span class="section-label">// Selected Work</span>
+        <div class="directory-heading">
+          <h1 id="directory-title">아이디어를<br />쓰이는 서비스로.</h1>
+          <p>웹 서비스부터 일상을 돕는 앱, 개발 지식을 나누는 강의까지.<br />Take Knowledge가 만든 작업을 찾아보세요.</p>
+        </div>
+        <form class="portfolio-search" id="portfolio-search-form" role="search">
+          <label for="portfolio-search-input">어떤 작업을 찾고 있나요?</label>
+          <div class="portfolio-search-field">
+            <span class="search-symbol" aria-hidden="true">⌕</span>
+            <input id="portfolio-search-input" name="q" type="search" placeholder="웹·앱 서비스와 강의 검색" maxlength="200" autocomplete="off" aria-controls="portfolio-results" />
+            <button class="search-clear" id="search-clear" type="button" aria-label="검색어 지우기" hidden>×</button>
+            <button class="search-submit" type="submit">검색 <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="search-hint">예: Supabase, 성격, 운동, 웹 개발</p>
+        </form>
+        <div class="portfolio-category-filters" id="portfolio-category-filters" role="group" aria-label="포트폴리오 분류"></div>
+        <div class="portfolio-results-heading">
+          <h2 id="portfolio-results-title">전체 작업</h2>
+          <p id="portfolio-result-count" role="status" aria-live="polite" aria-atomic="true"></p>
+        </div>
+        <div class="portfolio-grid portfolio-directory-grid" id="portfolio-results"></div>
+        <div class="portfolio-empty search-empty" id="portfolio-search-empty" hidden>
+          <span id="portfolio-empty-label">NO RESULTS</span>
+          <h3 id="portfolio-empty-title">검색 결과가 없어요.</h3>
+          <p id="portfolio-empty-description">다른 검색어를 입력하거나 분류를 바꿔보세요.</p>
+          <button class="action-button" id="search-reset" type="button">전체 작업 보기 <span aria-hidden="true">→</span></button>
+        </div>
+        <noscript><p>포트폴리오 검색을 사용하려면 브라우저에서 JavaScript를 활성화해 주세요.</p><a href="index.html#portfolio">메인 페이지에서 포트폴리오 보기</a></noscript>
+      </section>
+    </main>
+    <footer>&copy; 2026 TAKE KNOWLEDGE. ALL RIGHTS RESERVED. PRINTED IN DIGITAL GRAIN.</footer>
+    <template id="portfolio-result-template">
+      <article class="portfolio-card">
+        <a class="portfolio-image"><img alt="" loading="lazy" /><span class="portfolio-sequence"></span></a>
+        <div class="portfolio-info">
+          <div class="portfolio-meta"><span class="portfolio-category"></span><span class="portfolio-platform" hidden></span></div>
+          <h3><a></a></h3>
+          <p></p>
+          <a class="portfolio-link"><span class="portfolio-action-label"></span> <span class="portfolio-action-arrow" aria-hidden="true"></span></a>
+        </div>
+      </article>
+    </template>
+    <script type="module" src="portfolio.js"></script>
+  </body>
+</html>

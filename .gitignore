@@ -1,1 +1,7 @@
 node_modules/
+.vercel/
+
+# Local credentials must never be committed.
+.env
+.env.*
+!.env.example

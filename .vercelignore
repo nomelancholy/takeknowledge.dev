@@ -1,0 +1,10 @@
+.git/
+.vercel/
+node_modules/
+dist/
+.openai/
+.codex/
+.agents/
+.aws/
+.env
+.env.*
