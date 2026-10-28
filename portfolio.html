@@ -33,11 +33,19 @@
           <label for="portfolio-search-input">어떤 작업을 찾고 있나요?</label>
           <div class="portfolio-search-field">
             <span class="search-symbol" aria-hidden="true">⌕</span>
-            <input id="portfolio-search-input" name="q" type="search" placeholder="웹·앱 서비스와 강의 검색" maxlength="200" autocomplete="off" aria-controls="portfolio-results" />
+            <input id="portfolio-search-input" name="q" type="search" placeholder="필요한 기능이나 하고 싶은 일을 검색해 보세요" maxlength="200" autocomplete="off" aria-controls="portfolio-results" aria-describedby="portfolio-search-hint" />
             <button class="search-clear" id="search-clear" type="button" aria-label="검색어 지우기" hidden>×</button>
             <button class="search-submit" type="submit">검색 <span aria-hidden="true">→</span></button>
           </div>
-          <p class="search-hint">예: Supabase, 성격, 운동, 웹 개발</p>
+          <p class="search-hint" id="portfolio-search-hint">이름을 몰라도 괜찮아요. 필요한 기능이나 관련 단어로 찾아보세요. 검색 결과는 관련도순으로 보여드려요.</p>
+          <div class="search-examples" role="group" aria-label="이런 검색어로 찾아보세요">
+            <span>이런 걸 찾고 있나요?</span>
+            <button type="button" data-search-query="포스트잇 출력">포스트잇 출력</button>
+            <button type="button" data-search-query="운동 습관">운동 습관</button>
+            <button type="button" data-search-query="사진 속 큐알 읽기">사진 속 큐알 읽기</button>
+            <button type="button" data-search-query="축구 판정">축구 판정</button>
+            <button type="button" data-search-query="코딩 입문">코딩 입문</button>
+          </div>
         </form>
         <div class="portfolio-category-filters" id="portfolio-category-filters" role="group" aria-label="포트폴리오 분류"></div>
         <div class="portfolio-results-heading">
@@ -48,7 +56,7 @@
         <div class="portfolio-empty search-empty" id="portfolio-search-empty" hidden>
           <span id="portfolio-empty-label">NO RESULTS</span>
           <h3 id="portfolio-empty-title">검색 결과가 없어요.</h3>
-          <p id="portfolio-empty-description">다른 검색어를 입력하거나 분류를 바꿔보세요.</p>
+          <p id="portfolio-empty-description">‘인쇄’, ‘운동 알림’처럼 필요한 기능을 짧게 입력하거나 분류를 바꿔보세요.</p>
           <button class="action-button" id="search-reset" type="button">전체 작업 보기 <span aria-hidden="true">→</span></button>
         </div>
         <noscript><p>포트폴리오 검색을 사용하려면 브라우저에서 JavaScript를 활성화해 주세요.</p><a href="index.html#portfolio">메인 페이지에서 포트폴리오 보기</a></noscript>

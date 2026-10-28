@@ -668,6 +668,10 @@ header nav a[aria-current] { color: var(--accent); border-color: currentColor; }
 }
 .search-submit:hover { background: var(--accent); }
 .search-hint { margin-top: 14px; font-size: 0.8rem; color: var(--ink-light); }
+.search-examples { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 16px; font-size: 0.8rem; }
+.search-examples > span { color: var(--ink-light); margin-right: 4px; }
+.search-examples button { padding: 8px 12px; border: 1px solid var(--ink); background: transparent; color: var(--ink); font: inherit; cursor: pointer; }
+.search-examples button:hover, .search-examples button:focus-visible { background: var(--ink); color: var(--paper); }
 .portfolio-category-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 60px; }
 .portfolio-category-filters .filter-btn { font-family: inherit; }
 .portfolio-results-heading {

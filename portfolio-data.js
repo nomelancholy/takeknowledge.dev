@@ -5,6 +5,7 @@ export const portfolioItems = [
     id: "watermelon-inspector",
     appCategory: "생활",
     tags: ["수박", "과일", "소리", "감별", "기록"],
+    searchKeywords: ["맛있는 수박 고르기", "잘 익은 과일", "수박 당도 확인", "수박 두드리기", "장보기", "여름 과일"],
     features: ["두드림 소리와 겉모습으로 수박 감별", "감별 결과 기록", "당도와 식감 별점 남기기"],
     title: "수박감별사",
     description:
@@ -19,6 +20,7 @@ export const portfolioItems = [
     id: "big5-ocean",
     appCategory: "자기이해",
     tags: ["성격", "심리", "BIG5", "OCEAN", "MBTI"],
+    searchKeywords: ["성격 테스트", "심리 검사", "나를 알아보기", "자기 이해", "성향 분석", "나의 강점", "빅파이브", "오션"],
     features: ["50개 문항으로 살펴보는 다섯 가지 성격 요인", "OCEAN 그래프와 성향별 상세 해석", "강점 조합과 생활 속 힌트"],
     title: "BIG5 성격검사",
     description:
@@ -33,6 +35,7 @@ export const portfolioItems = [
     id: "my-energy-blueprint",
     appCategory: "자기이해",
     tags: ["휴먼디자인", "에너지", "설계도", "성향"],
+    searchKeywords: ["나를 알아보기", "자기 이해", "성향 분석", "출생 정보", "생년월일", "사주", "휴먼 디자인", "human design"],
     features: ["출생 정보를 바탕으로 에너지 설계도 확인", "나의 에너지 사용 방식 알아보기"],
     title: "나의 에너지 설계도",
     description:
@@ -47,6 +50,7 @@ export const portfolioItems = [
     id: "fitpocket",
     appCategory: "건강",
     tags: ["운동", "건강", "영상", "알림", "루틴"],
+    searchKeywords: ["운동 습관", "꾸준히 운동", "홈트레이닝", "홈트", "스트레칭", "운동 시간 알림", "운동 영상 저장", "유튜브 운동", "헬스 루틴"],
     features: ["저장해 둔 운동 영상 활용", "원하는 시간에 운동 알림 받기"],
     title: "운동 주머니",
     description:
@@ -61,6 +65,7 @@ export const portfolioItems = [
     id: "qr-pass",
     appCategory: "도구",
     tags: ["QR", "스캔", "사진", "링크", "코드"],
+    searchKeywords: ["큐알 코드", "큐알 읽기", "QR 리더", "사진에서 QR 읽기", "이미지 QR 인식", "갤러리 QR", "저장한 사진 스캔", "QR 링크 열기"],
     features: ["카메라로 QR 코드 분석", "사진 속 QR 코드 분석", "분석한 QR 코드의 링크로 연결"],
     title: "QR 패스",
     description:
@@ -73,6 +78,7 @@ export const portfolioItems = [
     category: "web",
     id: "supa-map",
     tags: ["Supabase", "계정", "프로젝트", "관리", "보드"],
+    searchKeywords: ["수파베이스", "슈퍼베이스", "여러 계정 관리", "프로젝트 정리", "무료 프로젝트 현황", "데이터베이스 프로젝트 관리", "대시보드"],
     features: ["여러 Supabase 계정과 프로젝트를 한곳에서 정리", "무료 프로젝트 배정 현황 확인", "개인 보드에서 프로젝트 관리"],
     title: "Supa Map",
     description:
@@ -84,6 +90,7 @@ export const portfolioItems = [
     category: "web",
     id: "a4-sticky-guide",
     tags: ["포스트잇", "인쇄", "A4", "글꼴", "가이드"],
+    searchKeywords: ["포스트잇 출력", "스티키 노트", "메모지 인쇄", "점착 메모지", "인쇄 양식", "프린트 템플릿", "에이포", "포스트잇에 글씨 인쇄"],
     features: ["포스트잇 규격 선택", "인쇄할 내용과 글꼴 배치", "A4 용지에 맞는 포스트잇 인쇄 가이드"],
     title: "A4 Sticky Guide",
     description:
@@ -95,6 +102,7 @@ export const portfolioItems = [
     category: "web",
     id: "dot",
     tags: ["도자기", "공방", "브랜드", "작품", "클래스"],
+    searchKeywords: ["도예", "도자기 수업", "공방 클래스", "도자기 작품", "그릇", "취미", "핸드메이드", "도자기 만들기"],
     features: ["도자기 공방 D.O.T. 브랜드 소개", "작품 둘러보기", "클래스 소식 확인"],
     title: "D.O.T.",
     description:
@@ -106,6 +114,7 @@ export const portfolioItems = [
     category: "web",
     id: "see-var",
     tags: ["K League", "축구", "심판", "라운드", "VAR"],
+    searchKeywords: ["K리그", "케이리그", "프로축구", "축구 판정", "오심", "비디오 판독", "심판 평가", "심판 순위", "판정 논란"],
     features: ["K League 심판 데이터를 라운드별로 확인", "라운드 베스트와 워스트 탐색", "쟁점 순간 살펴보기"],
     title: "SEE VAR",
     description:
@@ -117,6 +126,7 @@ export const portfolioItems = [
     category: "lecture",
     id: "pumpkin-market-course",
     tags: ["웹 개발", "바이브 코딩", "HTML", "CSS", "JavaScript", "Supabase", "Vercel"],
+    searchKeywords: ["코딩 입문", "프로그래밍 초보", "개발 처음 배우기", "웹사이트 만들기", "홈페이지 제작", "중고거래 사이트 만들기", "풀스택 기초", "로그인 구현", "데이터베이스 배우기", "배포 배우기"],
     features: ["HTML, CSS, JavaScript로 웹 개발의 기본 개념 익히기", "Supabase로 데이터베이스, 로그인, 이미지 저장 구현", "Vercel 배포까지 중고거래 웹 서비스 만들기"],
     title: "바이브 코딩으로 배우는 웹 개발 '호박마켓 따라 만들기'",
     description:
@@ -160,16 +170,88 @@ const categorySearchTerms = {
   game: ["게임"],
 };
 
+// Curated vocabulary only: all matching runs locally without AI or network calls.
+const searchSynonyms = [
+  ["인쇄", "출력", "프린트", "print", "printing"],
+  ["포스트잇", "메모지", "스티키노트", "sticky note", "post it", "post-it"],
+  ["qr", "큐알", "qrcode", "qr 코드", "큐알 코드", "qr code"],
+  ["스캔", "인식", "읽기", "읽는", "읽다", "읽고", "리더", "scan", "reader"],
+  ["사진", "이미지", "갤러리", "image", "photo"],
+  ["습관", "루틴", "꾸준히", "꾸준한", "꾸준하게", "routine", "habit"],
+  ["알림", "리마인더", "reminder"],
+  ["운동", "홈트", "홈트레이닝", "헬스", "workout", "fitness"],
+  ["성격", "심리", "personality"],
+  ["검사", "테스트", "test"],
+  ["입문", "초보", "기초", "처음", "beginner"],
+  ["코딩", "프로그래밍", "coding", "programming"],
+  ["강의", "배우기", "배우는", "배우고", "학습", "교육", "tutorial", "course"],
+  ["도자기", "도예", "ceramic", "pottery"],
+  ["판정", "오심", "심판", "판독", "referee"],
+  ["축구", "프로축구", "football", "soccer"],
+  ["k리그", "케이리그", "k league", "kleague"],
+  ["supabase", "수파베이스", "슈퍼베이스"],
+  ["웹사이트", "홈페이지", "website"],
+  ["앱", "어플", "애플리케이션", "app", "application"],
+  ["알아보기", "알고", "알아보고", "알아보는"],
+];
+const searchFillers = new Set([
+  "좀", "혹시", "뭔가", "어떤", "있는", "있나요", "있을까요", "할", "수", "하는", "하고", "해주는",
+  "싶어", "싶어요", "싶다", "싶은", "싶은데", "싶습니다", "필요", "필요한", "필요해", "필요해요",
+  "찾기", "찾는", "찾고", "찾아요", "찾아줘", "찾아주세요", "추천", "추천해줘", "추천해주세요",
+  "알려줘", "알려주세요", "주세요", "위한", "위해", "도와주는", "하려고", "하려는데", "속", "안에", "법", "방법",
+]);
+
+function compactSearchText(value) {
+  return normalizeSearchText(value).replace(/[^\p{L}\p{N}]/gu, "");
+}
+
+const synonymGroups = searchSynonyms.map(group => group.map(compactSearchText));
+const searchPhrases = searchSynonyms.flat().filter(word => /[\s-]/u.test(word))
+  .sort((a, b) => b.length - a.length);
+const searchIndex = portfolioItems.map((item) => ({
+  item,
+  fields: [
+    { weight: 12, values: [item.title] },
+    { weight: 8, values: [...(item.tags || []), ...(item.searchKeywords || [])] },
+    { weight: 5, values: item.features || [] },
+    { weight: 2, values: [item.description] },
+    { weight: 1, values: [categoryLabels[item.category], item.appCategory || "", appPlatformLabels[item.appPlatform] || "", ...(categorySearchTerms[item.category] || [])] },
+  ].map(field => ({ ...field, values: field.values.map(compactSearchText) })),
+}));
+
+function queryVariants(term) {
+  // Keep the original, and try Korean particles without altering project data.
+  const stem = term.replace(/(?:에서는|에서|으로|에게|까지|처럼|이랑|하고|로|을|를|은|는|이|가|에|도|만|와|과)$/u, "");
+  const variants = new Set([term]);
+  if (stem.length >= 2) variants.add(stem);
+  for (const group of synonymGroups) {
+    if (group.some(word => variants.has(word))) group.forEach(word => variants.add(word));
+  }
+  return [...variants];
+}
+
 export function searchPortfolio(query = "", category = "all") {
-  const terms = normalizeSearchText(query).split(" ").filter(Boolean);
-  return portfolioItems.filter((item) => {
-    if (category !== "all" && item.category !== category) return false;
-    const text = normalizeSearchText([
-      item.title, item.description, categoryLabels[item.category], item.appCategory,
-      appPlatformLabels[item.appPlatform], ...(categorySearchTerms[item.category] || []), ...(item.tags || []),
-    ].join(" "));
-    return terms.every((term) => text.includes(term));
-  });
+  const normalized = normalizeSearchText(query).slice(0, 200);
+  let tokenText = normalized.replace(/(?<=[\p{L}\p{N}])\.(?=[\p{L}\p{N}])/gu, "");
+  for (const phrase of searchPhrases) tokenText = tokenText.replaceAll(phrase, compactSearchText(phrase));
+  const terms = [...new Set(tokenText.split(/[^\p{L}\p{N}]+/u).filter(term => term && !searchFillers.has(term)))];
+  const phrase = compactSearchText(normalized);
+  const variants = terms.map(queryVariants);
+  return searchIndex.flatMap(({ item, fields }, index) => {
+    if (category !== "all" && item.category !== category) return [];
+    if (!normalized) return [{ item, score: 0, index }];
+    if (!terms.length) return [];
+    const scores = variants.map((alternatives, termIndex) => Math.max(0, ...fields.map(field => {
+      const direct = field.values.some(value => value.includes(terms[termIndex]));
+      const related = alternatives.some(term => field.values.some(value => value.includes(term)));
+      return direct ? field.weight * 2 : related ? field.weight : 0;
+    })));
+    // Every meaningful word must match; unrelated words must not broaden results.
+    if (scores.some(score => score === 0)) return [];
+    const title = compactSearchText(item.title);
+    const phraseBonus = title === phrase ? 100 : title.includes(phrase) ? 50 : 0;
+    return [{ item, score: scores.reduce((sum, score) => sum + score, phraseBonus), index }];
+  }).sort((a, b) => b.score - a.score || a.index - b.index).map(result => result.item);
 }
 
 export function readPortfolioSearchState(search = "") {

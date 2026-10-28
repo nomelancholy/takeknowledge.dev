@@ -48,7 +48,7 @@ function render(updateUrl = true) {
   const comingSoon = !state.query.trim() && state.category !== "all" && !portfolioItems.some(item => item.category === state.category);
   document.getElementById("portfolio-empty-label").textContent = comingSoon ? "COMING NEXT" : "NO RESULTS";
   document.getElementById("portfolio-empty-title").textContent = comingSoon ? "새로운 작업을 준비하고 있어요." : "검색 결과가 없어요.";
-  document.getElementById("portfolio-empty-description").textContent = comingSoon ? "다른 분야의 포트폴리오를 먼저 살펴보세요." : "다른 검색어를 입력하거나 분류를 바꿔보세요.";
+  document.getElementById("portfolio-empty-description").textContent = comingSoon ? "다른 분야의 포트폴리오를 먼저 살펴보세요." : "‘인쇄’, ‘운동 알림’처럼 필요한 기능을 짧게 입력하거나 분류를 바꿔보세요.";
   results.replaceChildren(...matches.map((item, index) => {
     const card = template.content.firstElementChild.cloneNode(true);
     card.dataset.category = item.category;
@@ -87,6 +87,13 @@ clear.addEventListener("click", () => {
   state.query = "";
   render();
   input.focus();
+});
+document.querySelectorAll("[data-search-query]").forEach((button) => {
+  button.addEventListener("click", () => {
+    state = { query: button.dataset.searchQuery, category: "all" };
+    render();
+    input.focus();
+  });
 });
 document.getElementById("search-reset").addEventListener("click", () => {
   state = { query: "", category: "all" };
