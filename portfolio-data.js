@@ -146,10 +146,10 @@ export const portfolioLinkLabels = {
 };
 
 // Use the receiving link issued specifically for the Take-Knowledge application.
-// Keep disabled until that link is provided; links from other applications show
-// their own application identity even when opened from this portfolio.
+// Links from other applications show their own application identity even when
+// opened from this portfolio. This link was provided for Take-Knowledge.
 export const siteConfig = {
-  donationHref: null,
+  donationHref: "https://link.kakaopay.com/__/ffe10Qe",
 };
 
 export const portfolioCategories = ["all", ...Object.keys(categoryLabels)];
