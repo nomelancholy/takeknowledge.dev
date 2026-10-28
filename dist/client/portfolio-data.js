@@ -145,10 +145,11 @@ export const portfolioLinkLabels = {
   lecture: "OPEN LECTURE ",
 };
 
-// Shared public code-transfer receiving link; projects may override donationHref.
-// A null value keeps the donation button visibly unavailable.
+// Use the receiving link issued specifically for the Take-Knowledge application.
+// Keep disabled until that link is provided; links from other applications show
+// their own application identity even when opened from this portfolio.
 export const siteConfig = {
-  donationHref: "https://fest.kakaopay.com/connect/money-transaction/link?qr_uuid=a2bac3c9-5813-4303-9186-1fa388bdaa28",
+  donationHref: null,
 };
 
 export const portfolioCategories = ["all", ...Object.keys(categoryLabels)];
