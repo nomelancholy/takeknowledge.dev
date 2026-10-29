@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { portfolioItems, searchPortfolio, readPortfolioSearchState, portfolioSearchParams, getProjectDetailHref } from "./portfolio-data.js";
 
 const ids = (query, category) => searchPortfolio(query, category).map(item => item.id);
+const gameIds = ["choi-the-salary-thief", "choi-rush-hour", "promotion-war", "ninja-choi-office-escape"];
 
 test("finds tools by needs, synonyms, and Korean expressions instead of their titles", () => {
   const cases = [
@@ -53,9 +54,9 @@ test("finds the office survival game by title, genre, and play needs", () => {
     assert.deepEqual(ids(query), ["choi-the-salary-thief"], query);
   }
   for (const query of ["킬링타임", "직장인 게임", "피하기 게임", "시간 때우기", "심심할 때", "브라우저 게임", "game"]) {
-    assert.deepEqual(new Set(ids(query)), new Set(["choi-the-salary-thief", "choi-rush-hour", "promotion-war"]), query);
+    assert.deepEqual(new Set(ids(query)), new Set(gameIds), query);
   }
-  assert.deepEqual(ids("", "game"), ["choi-the-salary-thief", "choi-rush-hour", "promotion-war"]);
+  assert.deepEqual(ids("", "game"), gameIds);
   assert.deepEqual(ids("킬링타임", "web"), []);
   const project = searchPortfolio("최과장")[0];
   assert.equal(project.linkHref, "https://choi-the-salary-thief.vercel.app/");
@@ -66,7 +67,7 @@ test("finds the rush-hour game by timing, signals, and leaving work", () => {
   for (const query of ["퇴근전쟁 최과장", "타이밍 게임", "칼퇴", "신호등 게임", "부장 눈치", "일하는 척", "rush hour"]) {
     assert.deepEqual(ids(query), ["choi-rush-hour"], query);
   }
-  assert.deepEqual(new Set(ids("최과장", "game")), new Set(["choi-the-salary-thief", "choi-rush-hour", "promotion-war"]));
+  assert.deepEqual(new Set(ids("최과장", "game")), new Set(gameIds));
   assert.deepEqual(ids("타이밍 게임", "app"), []);
   const project = searchPortfolio("퇴근전쟁")[0];
   assert.equal(project.linkHref, "https://choi-rush-hour.vercel.app/");
@@ -74,13 +75,24 @@ test("finds the rush-hour game by timing, signals, and leaving work", () => {
 });
 
 test("finds the promotion game by climbing, jumping, and promotion needs", () => {
-  for (const query of ["승진전쟁 최과장", "사다리 게임", "점프 게임", "플랫폼 게임", "승진", "직급 올리기", "office climber", "platformer"]) {
+  for (const query of ["승진전쟁 최과장", "사다리 게임", "플랫폼 게임", "승진", "직급 올리기", "office climber", "platformer"]) {
     assert.deepEqual(ids(query), ["promotion-war"], query);
   }
   assert.deepEqual(ids("사다리", "app"), []);
   const project = searchPortfolio("승진")[0];
   assert.equal(project.linkHref, "https://promotion-war.vercel.app/");
   assert.equal(getProjectDetailHref(project), "project.html?id=promotion-war");
+  assert.deepEqual(new Set(ids("점프 게임")), new Set(["promotion-war", "ninja-choi-office-escape"]));
+});
+
+test("finds the ninja runner by escaping, sliding, and increasing salary", () => {
+  for (const query of ["탈주닌자 최과장", "닌자 게임", "러너 게임", "슬라이드", "연봉 올리기", "이직 게임", "회사 탈출", "ninja", "runner"]) {
+    assert.deepEqual(ids(query), ["ninja-choi-office-escape"], query);
+  }
+  assert.deepEqual(ids("러너", "app"), []);
+  const project = searchPortfolio("탈주닌자")[0];
+  assert.equal(project.linkHref, "https://ninja-choi-office-escape.vercel.app/");
+  assert.equal(getProjectDetailHref(project), "project.html?id=ninja-choi-office-escape");
 });
 
 test("normalizes case, full-width letters, punctuation, and spacing", () => {
@@ -98,7 +110,7 @@ test("preserves categories and original order when no search is entered", () => 
   assert.equal(ids("", "lecture").length, 1);
   assert.deepEqual(ids("코딩 입문", "app"), []);
   assert.deepEqual(ids("프린트", "web"), ["a4-sticky-guide"]);
-  assert.equal(ids("", "game").length, 3);
+  assert.equal(ids("", "game").length, 4);
 });
 
 test("does not recommend unrelated projects for unknown or content-free searches", () => {

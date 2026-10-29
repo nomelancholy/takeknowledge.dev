@@ -171,6 +171,18 @@ export const portfolioItems = [
     thumbnailUrl: "assets/promotion-war.png",
   },
   {
+    category: "game",
+    id: "ninja-choi-office-escape",
+    tags: ["게임", "최과장", "닌자", "러너", "이직", "점프"],
+    searchKeywords: ["닌자 게임", "탈주 게임", "회사 탈출", "오피스 러너", "레트로 게임", "러너 게임", "달리기 게임", "러닝 게임", "횡스크롤", "점프 게임", "슬라이드 게임", "장애물 피하기", "연봉 올리기", "연봉 인상", "이직 게임", "출근 도장", "매일 미션", "직장인 게임", "회사 게임", "브라우저 게임", "웹게임", "캐주얼 게임", "킬링타임", "시간 때우기", "심심할 때", "ninja", "office escape", "runner"],
+    features: ["점프와 슬라이드로 불고리·감시 레이더 등 장애물 회피", "이직할 때마다 연봉을 올리며 최고 연봉 도전", "아슬아슬한 회피로 은신술 충전", "오늘의 미션·출근 도장과 까방권을 활용한 충돌 방어"],
+    title: "탈주닌자 최과장",
+    description:
+      "불고리와 감시 레이더를 피해 새 회사로 이직하는 레트로 오피스 러너 게임입니다. 점프와 슬라이드로 장애물을 넘고, 이직할 때마다 연봉을 올리며 최고 기록과 오늘의 미션에 도전하세요.",
+    linkHref: "https://ninja-choi-office-escape.vercel.app/",
+    thumbnailUrl: "assets/ninja-choi-office-escape.webp",
+  },
+  {
     category: "lecture",
     id: "pumpkin-market-course",
     tags: ["웹 개발", "바이브 코딩", "HTML", "CSS", "JavaScript", "Supabase", "Vercel"],
