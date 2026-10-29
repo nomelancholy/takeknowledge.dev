@@ -135,6 +135,18 @@ export const portfolioItems = [
     thumbnailUrl: "assets/seevar.png",
   },
   {
+    category: "game",
+    id: "choi-the-salary-thief",
+    tags: ["게임", "월급루팡", "직장인", "생존", "피하기", "아케이드"],
+    searchKeywords: ["최과장", "사무실 게임", "직장인 게임", "회사 게임", "퇴근 게임", "상사 피하기", "업무 피하기", "뱀 게임", "스네이크", "방향키 게임", "스와이프 게임", "브라우저 게임", "웹게임", "캐주얼 게임", "킬링타임", "시간 때우기", "심심할 때", "점수 도전", "choi the salary thief", "snake", "arcade"],
+    features: ["방향키나 스와이프로 이동하며 퇴근 시간까지 생존", "상사·후임 수색대와 업무, 벽과 가구를 피하는 플레이", "딴짓 아이템과 콤보로 점수 획득, 은신처 활용", "도전 스테이지, 매점 장비와 명예의 전당"],
+    title: "월급루팡 최과장",
+    description:
+      "상사와 업무를 피해 오후 6시까지 버티는 사무실 생존 아케이드 게임입니다. 방향키나 스와이프로 최과장을 움직이고, 딴짓 아이템과 콤보로 점수를 쌓으며 무사 퇴근에 도전하세요.",
+    linkHref: "https://choi-the-salary-thief.vercel.app/",
+    thumbnailUrl: "assets/choi-the-salary-thief.png",
+  },
+  {
     category: "lecture",
     id: "pumpkin-market-course",
     tags: ["웹 개발", "바이브 코딩", "HTML", "CSS", "JavaScript", "Supabase", "Vercel"],
@@ -164,6 +176,7 @@ export const appPlatformLabels = {
 
 export const portfolioLinkLabels = {
   app: "OPEN IN TOSS ",
+  game: "PLAY GAME ",
   lecture: "OPEN LECTURE ",
 };
 
@@ -179,7 +192,7 @@ const categorySearchTerms = {
   web: ["웹", "웹서비스", "웹사이트", "website", "서비스"],
   app: ["앱", "어플", "미니앱", "모바일", "application", "서비스"],
   lecture: ["강의", "교육", "tutorial", "course"],
-  game: ["게임"],
+  game: ["게임", "웹게임", "브라우저 게임", "game"],
 };
 
 // Curated vocabulary only: all matching runs locally without AI or network calls.

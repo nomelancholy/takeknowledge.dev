@@ -48,6 +48,17 @@ test("includes the pull-up community in need-based search and web projects", () 
   assert.equal(getProjectDetailHref(project), "project.html?id=pull-up-one-reps");
 });
 
+test("finds the office survival game by title, genre, and play needs", () => {
+  for (const query of ["월급루팡 최과장", "킬링타임", "직장인 게임", "피하기 게임", "시간 때우기", "심심할 때", "브라우저 게임", "snake", "game"]) {
+    assert.deepEqual(ids(query), ["choi-the-salary-thief"], query);
+  }
+  assert.deepEqual(ids("", "game"), ["choi-the-salary-thief"]);
+  assert.deepEqual(ids("킬링타임", "web"), []);
+  const project = searchPortfolio("최과장")[0];
+  assert.equal(project.linkHref, "https://choi-the-salary-thief.vercel.app/");
+  assert.equal(getProjectDetailHref(project), "project.html?id=choi-the-salary-thief");
+});
+
 test("normalizes case, full-width letters, punctuation, and spacing", () => {
   assert.deepEqual(ids("  ＱＲ   스캔!  "), ["qr-pass"]);
   assert.deepEqual(ids("포스트잇출력"), ["a4-sticky-guide"]);
@@ -63,7 +74,7 @@ test("preserves categories and original order when no search is entered", () => 
   assert.equal(ids("", "lecture").length, 1);
   assert.deepEqual(ids("코딩 입문", "app"), []);
   assert.deepEqual(ids("프린트", "web"), ["a4-sticky-guide"]);
-  assert.deepEqual(ids("", "game"), []);
+  assert.equal(ids("", "game").length, 1);
 });
 
 test("does not recommend unrelated projects for unknown or content-free searches", () => {

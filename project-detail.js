@@ -43,16 +43,16 @@ if (!project) {
     li.append(number, document.createTextNode(feature));
     return li;
   }));
-  document.getElementById("project-feature-title").textContent = project.category === "lecture" ? "이런 내용을 배울 수 있어요." : "이렇게 활용해 보세요.";
+  document.getElementById("project-feature-title").textContent = project.category === "lecture" ? "이런 내용을 배울 수 있어요." : project.category === "game" ? "이렇게 즐겨보세요." : "이렇게 활용해 보세요.";
 
   const isToss = project.appPlatform === "toss" && Boolean(project.qrCodeUrl);
   detail.classList.toggle("has-qr", isToss);
   const launch = document.getElementById("project-launch");
   launch.href = project.linkHref;
-  document.getElementById("project-launch-label").textContent = isToss ? "토스에서 열기" : project.category === "lecture" ? "강의 열기" : "서비스 열기";
+  document.getElementById("project-launch-label").textContent = isToss ? "토스에서 열기" : project.category === "lecture" ? "강의 열기" : project.category === "game" ? "게임 플레이" : "서비스 열기";
   document.getElementById("project-launch-note").textContent = isToss
     ? "휴대폰에서는 토스 앱으로 연결되고, PC에서는 QR 코드를 안내해요."
-    : project.category === "lecture" ? "새 창에서 강의 페이지로 연결됩니다." : "새 창에서 웹 서비스로 연결됩니다.";
+    : project.category === "lecture" ? "새 창에서 강의 페이지로 연결됩니다." : project.category === "game" ? "새 창에서 게임이 열립니다. 방향키 또는 스와이프로 플레이하세요." : "새 창에서 웹 서비스로 연결됩니다.";
   if (isToss) {
     const qr = document.getElementById("project-qr");
     qr.src = project.qrCodeUrl;
