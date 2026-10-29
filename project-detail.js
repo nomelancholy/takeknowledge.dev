@@ -52,7 +52,7 @@ if (!project) {
   document.getElementById("project-launch-label").textContent = isToss ? "토스에서 열기" : project.category === "lecture" ? "강의 열기" : project.category === "game" ? "게임 플레이" : "서비스 열기";
   document.getElementById("project-launch-note").textContent = isToss
     ? "휴대폰에서는 토스 앱으로 연결되고, PC에서는 QR 코드를 안내해요."
-    : project.category === "lecture" ? "새 창에서 강의 페이지로 연결됩니다." : project.category === "game" ? "새 창에서 게임이 열립니다. 방향키 또는 스와이프로 플레이하세요." : "새 창에서 웹 서비스로 연결됩니다.";
+    : project.category === "lecture" ? "새 창에서 강의 페이지로 연결됩니다." : project.category === "game" ? "새 창에서 게임이 열립니다. 게임 화면의 조작 안내를 확인해 주세요." : "새 창에서 웹 서비스로 연결됩니다.";
   if (isToss) {
     const qr = document.getElementById("project-qr");
     qr.src = project.qrCodeUrl;

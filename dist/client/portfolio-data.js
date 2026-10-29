@@ -159,6 +159,18 @@ export const portfolioItems = [
     thumbnailUrl: "assets/choi-rush-hour.jpg",
   },
   {
+    category: "game",
+    id: "promotion-war",
+    tags: ["게임", "최과장", "승진", "사다리", "점프", "아케이드"],
+    searchKeywords: ["사다리 게임", "사다리 오르기", "점프 게임", "플랫폼 게임", "플랫포머", "오피스 클라이머", "업무 장애물 피하기", "직장인 게임", "회사 게임", "브라우저 게임", "웹게임", "캐주얼 게임", "킬링타임", "시간 때우기", "심심할 때", "과장부터 사장", "직급 올리기", "승진 도전", "promotion war", "office climber", "platformer", "arcade"],
+    features: ["업무 장애물을 피하며 사다리와 점프로 층 돌파", "5개 층을 돌파할 때마다 한 직급씩 승진", "목숨 3개로 과장부터 사장까지 도전", "방향키로 이동·사다리 오르기, Space로 점프하고 랭킹 도전"],
+    title: "승진전쟁 최과장",
+    description:
+      "결재와 회의, 긴급 수정 같은 업무 장애물을 피해 사다리를 오르는 오피스 클라이머 게임입니다. 이동과 점프로 5개 층을 돌파할 때마다 한 직급씩 승진하며, 과장부터 사장까지 올라가는 도전에 나서세요.",
+    linkHref: "https://promotion-war.vercel.app/",
+    thumbnailUrl: "assets/promotion-war.png",
+  },
+  {
     category: "lecture",
     id: "pumpkin-market-course",
     tags: ["웹 개발", "바이브 코딩", "HTML", "CSS", "JavaScript", "Supabase", "Vercel"],
