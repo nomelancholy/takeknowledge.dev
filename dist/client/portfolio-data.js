@@ -147,6 +147,18 @@ export const portfolioItems = [
     thumbnailUrl: "assets/choi-the-salary-thief.png",
   },
   {
+    category: "game",
+    id: "choi-rush-hour",
+    tags: ["게임", "최과장", "퇴근", "타이밍", "생존", "직장인"],
+    searchKeywords: ["칼퇴", "정시 퇴근", "퇴근 게임", "직장인 게임", "회사 게임", "타이밍 게임", "신호등 게임", "빨간불 초록불", "부장 눈치", "상사 피하기", "일하는 척", "주차별 도전", "모바일 게임", "브라우저 게임", "웹게임", "캐주얼 게임", "킬링타임", "시간 때우기", "심심할 때", "러시아워", "rush hour", "choi rush hour"],
+    features: ["월요일부터 금요일까지 이어지는 주차별 퇴근 생존 도전", "신호와 부장 시선을 살피며 이동하고 일하는 척하기", "방향키·스와이프·화면 방향 버튼으로 조작", "오늘의 미션과 퇴근 성공 일수 랭킹 도전"],
+    title: "퇴근전쟁 최과장",
+    description:
+      "신호와 부장 눈치를 살피며 무사 퇴근에 도전하는 타이밍 생존 게임입니다. 움직일 때와 일하는 척할 때를 골라 월요일부터 금요일까지 버티고, 퇴근 성공 일수와 최고 점수에 도전하세요.",
+    linkHref: "https://choi-rush-hour.vercel.app/",
+    thumbnailUrl: "assets/choi-rush-hour.jpg",
+  },
+  {
     category: "lecture",
     id: "pumpkin-market-course",
     tags: ["웹 개발", "바이브 코딩", "HTML", "CSS", "JavaScript", "Supabase", "Vercel"],

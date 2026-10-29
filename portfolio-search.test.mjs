@@ -49,14 +49,28 @@ test("includes the pull-up community in need-based search and web projects", () 
 });
 
 test("finds the office survival game by title, genre, and play needs", () => {
-  for (const query of ["월급루팡 최과장", "킬링타임", "직장인 게임", "피하기 게임", "시간 때우기", "심심할 때", "브라우저 게임", "snake", "game"]) {
+  for (const query of ["월급루팡 최과장", "snake"]) {
     assert.deepEqual(ids(query), ["choi-the-salary-thief"], query);
   }
-  assert.deepEqual(ids("", "game"), ["choi-the-salary-thief"]);
+  for (const query of ["킬링타임", "직장인 게임", "피하기 게임", "시간 때우기", "심심할 때", "브라우저 게임", "game"]) {
+    assert.deepEqual(new Set(ids(query)), new Set(["choi-the-salary-thief", "choi-rush-hour"]), query);
+  }
+  assert.deepEqual(ids("", "game"), ["choi-the-salary-thief", "choi-rush-hour"]);
   assert.deepEqual(ids("킬링타임", "web"), []);
   const project = searchPortfolio("최과장")[0];
   assert.equal(project.linkHref, "https://choi-the-salary-thief.vercel.app/");
   assert.equal(getProjectDetailHref(project), "project.html?id=choi-the-salary-thief");
+});
+
+test("finds the rush-hour game by timing, signals, and leaving work", () => {
+  for (const query of ["퇴근전쟁 최과장", "타이밍 게임", "칼퇴", "신호등 게임", "부장 눈치", "일하는 척", "rush hour"]) {
+    assert.deepEqual(ids(query), ["choi-rush-hour"], query);
+  }
+  assert.deepEqual(new Set(ids("최과장", "game")), new Set(["choi-the-salary-thief", "choi-rush-hour"]));
+  assert.deepEqual(ids("타이밍 게임", "app"), []);
+  const project = searchPortfolio("퇴근전쟁")[0];
+  assert.equal(project.linkHref, "https://choi-rush-hour.vercel.app/");
+  assert.equal(getProjectDetailHref(project), "project.html?id=choi-rush-hour");
 });
 
 test("normalizes case, full-width letters, punctuation, and spacing", () => {
@@ -74,7 +88,7 @@ test("preserves categories and original order when no search is entered", () => 
   assert.equal(ids("", "lecture").length, 1);
   assert.deepEqual(ids("코딩 입문", "app"), []);
   assert.deepEqual(ids("프린트", "web"), ["a4-sticky-guide"]);
-  assert.equal(ids("", "game").length, 1);
+  assert.equal(ids("", "game").length, 2);
 });
 
 test("does not recommend unrelated projects for unknown or content-free searches", () => {
