@@ -12,7 +12,6 @@ test("finds tools by needs, synonyms, and Korean expressions instead of their ti
     ["사진 속 큐알 읽기", "qr-pass"],
     ["사진으로 QR을 읽고 싶어요", "qr-pass"],
     ["QR code reader", "qr-pass"],
-    ["운동을 꾸준히 하고 싶어요", "fitpocket"],
     ["홈트 리마인더", "fitpocket"],
     ["축구 판정", "see-var"],
     ["케이리그 오심", "see-var"],
@@ -37,6 +36,18 @@ test("ranks direct names above related terms and lets additional needs narrow re
   assert.deepEqual(new Set(ids("나를 알고 싶어요")), new Set(["big5-ocean", "my-energy-blueprint"]));
 });
 
+test("includes the pull-up community in need-based search and web projects", () => {
+  for (const query of ["턱걸이 한개만", "풀업 초보", "철봉 매달리기", "등 운동", "매달리기 시간", "pull-up", "pull up", "출석 체크"]) {
+    assert.deepEqual(ids(query), ["pull-up-one-reps"], query);
+  }
+  assert.deepEqual(new Set(ids("운동을 꾸준히 하고 싶어요")), new Set(["fitpocket", "pull-up-one-reps"]));
+  assert.deepEqual(ids("운동 기록", "web"), ["pull-up-one-reps"]);
+  assert.deepEqual(ids("풀업", "app"), []);
+  const project = searchPortfolio("턱걸이")[0];
+  assert.equal(project.linkHref, "https://pull-up-one-reps.vercel.app/");
+  assert.equal(getProjectDetailHref(project), "project.html?id=pull-up-one-reps");
+});
+
 test("normalizes case, full-width letters, punctuation, and spacing", () => {
   assert.deepEqual(ids("  ＱＲ   스캔!  "), ["qr-pass"]);
   assert.deepEqual(ids("포스트잇출력"), ["a4-sticky-guide"]);
@@ -47,7 +58,7 @@ test("normalizes case, full-width letters, punctuation, and spacing", () => {
 
 test("preserves categories and original order when no search is entered", () => {
   assert.deepEqual(searchPortfolio("  "), portfolioItems);
-  assert.equal(ids("", "web").length, 4);
+  assert.equal(ids("", "web").length, 5);
   assert.equal(ids("", "app").length, 5);
   assert.equal(ids("", "lecture").length, 1);
   assert.deepEqual(ids("코딩 입문", "app"), []);

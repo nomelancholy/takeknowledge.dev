@@ -76,6 +76,18 @@ export const portfolioItems = [
   },
   {
     category: "web",
+    id: "pull-up-one-reps",
+    tags: ["턱걸이", "풀업", "철봉", "운동", "기록", "커뮤니티"],
+    searchKeywords: ["첫 턱걸이", "턱걸이 한 개", "풀업 초보", "턱걸이 0개 탈출", "철봉 매달리기", "등 운동", "운동 기록", "출석 체크", "운동 습관", "꾸준히 운동", "매달리기 시간", "운동 성장 그래프", "pull up", "pullup", "one more club"],
+    features: ["첫 풀업을 위한 가이드 영상과 단계별 루틴", "출석과 운동 기록, 매달리기 시간 관리", "성장 그래프와 출석부로 꾸준한 실천 확인", "도전자 커뮤니티, 랭킹과 명예의 전당"],
+    title: "턱걸이 한개만",
+    description:
+      "턱걸이 0개에서 첫 한 개를 향해 함께 도전하는 운동 커뮤니티입니다. 풀업 가이드 영상으로 시작하고, 출석과 운동 기록·매달리기 성장 그래프로 변화를 확인하며 도전자들과 경험을 나눌 수 있어요.",
+    linkHref: "https://pull-up-one-reps.vercel.app/",
+    thumbnailUrl: "assets/pull-up-one-reps.png",
+  },
+  {
+    category: "web",
     id: "supa-map",
     tags: ["Supabase", "계정", "프로젝트", "관리", "보드"],
     searchKeywords: ["수파베이스", "슈퍼베이스", "여러 계정 관리", "프로젝트 정리", "무료 프로젝트 현황", "데이터베이스 프로젝트 관리", "대시보드"],
@@ -180,6 +192,7 @@ const searchSynonyms = [
   ["습관", "루틴", "꾸준히", "꾸준한", "꾸준하게", "routine", "habit"],
   ["알림", "리마인더", "reminder"],
   ["운동", "홈트", "홈트레이닝", "헬스", "workout", "fitness"],
+  ["턱걸이", "풀업", "pullup", "pull up", "pull-up"],
   ["성격", "심리", "personality"],
   ["검사", "테스트", "test"],
   ["입문", "초보", "기초", "처음", "beginner"],
