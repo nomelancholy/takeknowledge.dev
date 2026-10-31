@@ -37,6 +37,16 @@ test("ranks direct names above related terms and lets additional needs narrow re
   assert.deepEqual(new Set(ids("나를 알고 싶어요")), new Set(["big5-ocean", "my-energy-blueprint"]));
 });
 
+test("finds the wedding ledger by guest lists, cash gifts, and reception needs", () => {
+  for (const query of ["축의금 장부", "축의금 정리", "하객 명단", "결혼식 장부", "축의금 접수", "현금 합계", "계좌이체 명부", "웨딩", "wedding ledger"]) {
+    assert.deepEqual(ids(query), ["wedding-money"], query);
+  }
+  assert.deepEqual(ids("축의금", "game"), []);
+  const project = searchPortfolio("하객 명단", "web")[0];
+  assert.equal(project.linkHref, "https://wedding-money-chi.vercel.app/");
+  assert.equal(getProjectDetailHref(project), "project.html?id=wedding-money");
+});
+
 test("includes the pull-up community in need-based search and web projects", () => {
   for (const query of ["턱걸이 한개만", "풀업 초보", "철봉 매달리기", "등 운동", "매달리기 시간", "pull-up", "pull up", "출석 체크"]) {
     assert.deepEqual(ids(query), ["pull-up-one-reps"], query);
@@ -105,11 +115,12 @@ test("normalizes case, full-width letters, punctuation, and spacing", () => {
 
 test("preserves categories and original order when no search is entered", () => {
   assert.deepEqual(searchPortfolio("  "), portfolioItems);
-  assert.equal(ids("", "web").length, 5);
+  assert.equal(ids("", "web").length, 6);
   assert.equal(ids("", "app").length, 5);
   assert.equal(ids("", "lecture").length, 1);
   assert.deepEqual(ids("코딩 입문", "app"), []);
-  assert.deepEqual(ids("프린트", "web"), ["a4-sticky-guide"]);
+  assert.deepEqual(new Set(ids("프린트", "web")), new Set(["a4-sticky-guide", "wedding-money"]));
+  assert.equal(ids("프린트", "web")[0], "a4-sticky-guide");
   assert.equal(ids("", "game").length, 4);
 });
 

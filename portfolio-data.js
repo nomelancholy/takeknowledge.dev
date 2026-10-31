@@ -76,6 +76,18 @@ export const portfolioItems = [
   },
   {
     category: "web",
+    id: "wedding-money",
+    tags: ["축의금", "결혼식", "장부", "하객", "정산", "CSV"],
+    searchKeywords: ["축의금 정리", "축의금 접수", "축의금 계산", "결혼식 장부", "하객 명단", "하객 명부", "결혼 준비", "웨딩", "봉투 번호", "현금 합계", "계좌이체 명부", "이름 검색", "소계", "엑셀 저장", "CSV 내보내기", "명단 인쇄", "wedding money", "wedding ledger"],
+    features: ["봉투 번호·이름·만원 단위 금액을 빠르게 입력", "하객 인원과 현금 합계 확인, 계좌이체는 명부로 구분", "이름 검색·정렬과 소계 계산", "브라우저 자동 저장, CSV 저장·불러오기와 인쇄"],
+    title: "축의금 장부",
+    description:
+      "결혼식 축의금 접수를 돕는 웹 장부입니다. 봉투 번호와 이름, 금액을 입력해 하객 인원과 현금 합계를 확인하고, 계좌이체로 보낸 분은 명부로 구분할 수 있어요. 기록은 이 브라우저에 자동 저장되며 CSV 저장·불러오기와 인쇄도 지원합니다.",
+    linkHref: "https://wedding-money-chi.vercel.app/",
+    thumbnailUrl: "assets/wedding-money.png",
+  },
+  {
+    category: "web",
     id: "pull-up-one-reps",
     tags: ["턱걸이", "풀업", "철봉", "운동", "기록", "커뮤니티"],
     searchKeywords: ["첫 턱걸이", "턱걸이 한 개", "풀업 초보", "턱걸이 0개 탈출", "철봉 매달리기", "등 운동", "운동 기록", "출석 체크", "운동 습관", "꾸준히 운동", "매달리기 시간", "운동 성장 그래프", "pull up", "pullup", "one more club"],
