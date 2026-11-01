@@ -76,6 +76,18 @@ export const portfolioItems = [
   },
   {
     category: "web",
+    id: "beacon-port",
+    tags: ["이력서", "경력", "커리어", "취업", "이직", "공유"],
+    searchKeywords: ["이력서 작성", "이력서 목록", "이력서 공유", "온라인 이력서", "웹 이력서", "경력 기술서", "사이드 프로젝트", "기술 스택", "개발자 이력서", "구직", "채용", "인재", "자격증", "어학 성적", "비콘", "비콘 포트", "resume", "beacon port"],
+    features: ["경력·사이드 프로젝트·교육·자격증·어학 성적을 항목별로 입력", "표시할 항목을 고르고 미리보기로 확인", "기술 스택과 사용 기간 정리", "이력서별 공개·비공개 전환과 URL 공유"],
+    title: "Beacon Port",
+    description:
+      "인재의 신호가 모이는 곳, 온라인 이력서 서비스입니다. 경력과 사이드 프로젝트, 교육, 자격증, 어학 성적을 항목별로 입력해 이력서를 만들고 목적에 맞게 여러 개를 둘 수 있어요. 공개로 전환한 이력서는 URL로 공유할 수 있으며, 이메일이나 Google·GitHub 계정으로 시작할 수 있습니다.",
+    linkHref: "https://beacon-port.vercel.app/",
+    thumbnailUrl: "assets/beacon-port-main.jpg",
+  },
+  {
+    category: "web",
     id: "wedding-money",
     tags: ["축의금", "결혼식", "장부", "하객", "정산", "CSV"],
     searchKeywords: ["축의금 정리", "축의금 접수", "축의금 계산", "결혼식 장부", "하객 명단", "하객 명부", "결혼 준비", "웨딩", "봉투 번호", "현금 합계", "계좌이체 명부", "이름 검색", "소계", "엑셀 저장", "CSV 내보내기", "명단 인쇄", "wedding money", "wedding ledger"],

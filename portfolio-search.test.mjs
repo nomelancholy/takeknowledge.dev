@@ -37,6 +37,16 @@ test("ranks direct names above related terms and lets additional needs narrow re
   assert.deepEqual(new Set(ids("나를 알고 싶어요")), new Set(["big5-ocean", "my-energy-blueprint"]));
 });
 
+test("finds Beacon Port by resume writing, sharing, and career needs", () => {
+  for (const query of ["Beacon Port", "비콘 포트", "이력서 작성", "이력서 공유", "온라인 이력서", "개발자 이력서", "resume"]) {
+    assert.deepEqual(ids(query), ["beacon-port"], query);
+  }
+  assert.deepEqual(ids("이력서", "game"), []);
+  const project = searchPortfolio("이력서 공유", "web")[0];
+  assert.equal(project.linkHref, "https://beacon-port.vercel.app/");
+  assert.equal(getProjectDetailHref(project), "project.html?id=beacon-port");
+});
+
 test("finds the wedding ledger by guest lists, cash gifts, and reception needs", () => {
   for (const query of ["축의금 장부", "축의금 정리", "하객 명단", "결혼식 장부", "축의금 접수", "현금 합계", "계좌이체 명부", "웨딩", "wedding ledger"]) {
     assert.deepEqual(ids(query), ["wedding-money"], query);
@@ -115,7 +125,7 @@ test("normalizes case, full-width letters, punctuation, and spacing", () => {
 
 test("preserves categories and original order when no search is entered", () => {
   assert.deepEqual(searchPortfolio("  "), portfolioItems);
-  assert.equal(ids("", "web").length, 6);
+  assert.equal(ids("", "web").length, 7);
   assert.equal(ids("", "app").length, 5);
   assert.equal(ids("", "lecture").length, 1);
   assert.deepEqual(ids("코딩 입문", "app"), []);
