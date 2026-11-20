@@ -213,7 +213,11 @@ export const portfolioItems = [
     linkHref: "https://promotion-war.vercel.app/",
     thumbnailUrl: "assets/promotion-war.png",
     bannerAd: {
-      placement: "게임 대기 화면, 다른 게임 목록과 결과 화면의 광고 영역",
+      placement: "게임 하단·다른 게임 목록 및 인게임 랭킹·결과 화면의 배너 영역 · 배너 1개당 50,000원",
+      size: "960 × 200px (24:5 비율, 반응형 축소)",
+      formats: "PNG / JPG / WebP",
+      preparation: "배너 1개당 50,000원. 광고 이미지와 클릭 시 연결할 주소, 희망 위치·기간을 메일로 보내주세요. 실제 광고도 안내 배너와 같은 비율로 게재됩니다.",
+      guideHref: "https://promotion-war.vercel.app/#ad-guide",
     },
   },
   {
