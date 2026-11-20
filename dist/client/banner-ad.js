@@ -25,7 +25,8 @@ if (!item) {
   if (unavailableReason) {
     document.getElementById("banner-ad-spec-title").textContent = "직접 게재 불가";
   } else {
-    const email = document.getElementById("banner-ad-email").textContent;
+    const emailField = document.getElementById("banner-ad-email");
+    const email = emailField.value;
     const subject = encodeURIComponent(`[${item.title}] 배너 광고 문의`);
     const body = encodeURIComponent([
       `광고를 게재할 서비스: ${item.title}`,
@@ -34,6 +35,18 @@ if (!item) {
       "희망 게재 위치와 기간: ",
     ].join("\r\n"));
     document.getElementById("banner-ad-mail").href = `mailto:${email}?subject=${subject}&body=${body}`;
+    const copyStatus = document.getElementById("banner-ad-copy-status");
+    document.getElementById("banner-ad-copy").addEventListener("click", async () => {
+      copyStatus.textContent = "";
+      try {
+        await navigator.clipboard.writeText(email);
+        copyStatus.textContent = "이메일 주소를 복사했어요.";
+      } catch {
+        emailField.focus();
+        emailField.select();
+        copyStatus.textContent = "선택된 이메일 주소를 직접 복사해 주세요.";
+      }
+    });
     document.getElementById("banner-ad-inquiry").hidden = false;
   }
   detail.hidden = false;

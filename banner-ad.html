@@ -53,10 +53,15 @@
           <div>
             <h2 id="banner-ad-inquiry-title">배너 1개당 50,000원</h2>
             <p>광고 내용, 연결할 주소, 희망 게재 위치와 기간을 적어 보내주세요.</p>
-            <p>받는 주소 <strong id="banner-ad-email">takeknowledge@naver.com</strong></p>
           </div>
-          <div class="interior-next-actions">
-            <a class="action-button action-primary" id="banner-ad-mail">이메일로 문의하기 <span aria-hidden="true">↗</span></a>
+          <div class="banner-ad-contact">
+            <label for="banner-ad-email">받는 이메일 주소</label>
+            <input type="text" id="banner-ad-email" value="takeknowledge@naver.com" readonly spellcheck="false" />
+            <div class="interior-next-actions">
+              <button class="action-button" id="banner-ad-copy" type="button">메일 주소 복사</button>
+              <a class="action-button action-primary" id="banner-ad-mail">메일 앱 열기 <span aria-hidden="true">↗</span></a>
+            </div>
+            <p id="banner-ad-copy-status" role="status"></p>
           </div>
         </section>
       </section>
