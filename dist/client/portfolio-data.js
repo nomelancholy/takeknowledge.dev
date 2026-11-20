@@ -231,6 +231,12 @@ export const portfolioItems = [
       "불고리와 감시 레이더를 피해 새 회사로 이직하는 레트로 오피스 러너 게임입니다. 점프와 슬라이드로 장애물을 넘고, 이직할 때마다 연봉을 올리며 최고 기록과 오늘의 미션에 도전하세요.",
     linkHref: "https://ninja-choi-office-escape.vercel.app/",
     thumbnailUrl: "assets/ninja-choi-office-escape.webp",
+    bannerAd: {
+      placement: "게임 시작 및 결과 화면의 배너 영역",
+      size: "320 × 100 px (16:5)",
+      formats: "PNG · JPG · WebP",
+      preparation: "같은 배너가 시작 화면과 결과 화면에 표시되며, 작은 화면에서는 같은 비율로 축소됩니다. 이미지와 연결할 주소를 함께 보내주세요.",
+    },
   },
   {
     category: "lecture",
