@@ -1,5 +1,6 @@
 import "./site.js";
-import { portfolioItems, portfolioCategories, categoryLabels, appPlatformLabels, getProjectDetailHref, siteConfig } from "./portfolio-data.js";
+import { portfolioItems, portfolioCategories, categoryLabels, appPlatformLabels, getProjectDetailHref } from "./portfolio-data.js";
+import { getBannerAdUnavailableReason, renderBannerAdInfo } from "./banner-ad-info.js";
 
 const services = document.getElementById("banner-services");
 const list = document.getElementById("banner-service-list");
@@ -8,8 +9,6 @@ const filters = document.getElementById("banner-category-filters");
 const showUnavailable = document.getElementById("banner-show-unavailable");
 const count = document.getElementById("banner-service-count");
 const empty = document.getElementById("banner-service-empty");
-const inquiry = new URL(document.getElementById("banner-inquiry-email").href);
-const [serviceField, ...messageFields] = inquiry.searchParams.get("body").split("\r\n");
 let selectedCategory = "all";
 
 // Show services with a known placement first, keeping the portfolio order within each group.
@@ -21,7 +20,7 @@ const items = [
 const entries = items.map((item) => {
   const row = template.content.firstElementChild.cloneNode(true);
   const ad = item.bannerAd;
-  const unavailableReason = item.bannerAdsUnavailable ?? siteConfig.bannerAdsUnavailableByPlatform[item.appPlatform];
+  const unavailableReason = getBannerAdUnavailableReason(item);
   row.querySelector("img").src = item.thumbnailUrl;
   row.querySelector("summary strong").textContent = item.title;
   row.querySelector(".banner-service-category").textContent =
@@ -29,33 +28,13 @@ const entries = items.map((item) => {
   row.querySelector(".banner-service-status").textContent = unavailableReason
     ? "직접 게재 불가"
     : ad?.size ?? (ad ? "이미지 규격 문의" : "게재 가능 여부 문의");
-  row.querySelector(".banner-service-placement").textContent =
-    ad?.placement ?? "희망하는 화면이나 위치를 메일로 알려주세요.";
-  row.querySelector(".banner-service-material").textContent = ad?.size
-    ? [ad.size, ad.formats].filter(Boolean).join(" · ")
-    : "이미지 크기와 파일 형식은 문의 시 확인해 주세요.";
+  renderBannerAdInfo(row, ad, unavailableReason);
 
-  const preparationText = unavailableReason ?? ad?.preparation;
-  if (preparationText) {
-    const preparation = row.querySelector(".banner-service-preparation");
-    preparation.textContent = preparationText;
-    preparation.hidden = false;
-  }
-  if (ad?.guideHref && !unavailableReason) {
-    const guide = row.querySelector(".banner-service-guide");
-    guide.href = ad.guideHref;
-    guide.hidden = false;
-  }
-
-  const mail = row.querySelector(".banner-service-mail");
-  if (unavailableReason) {
-    row.querySelector(".banner-service-detail dl").hidden = true;
-    mail.hidden = true;
-  } else {
-    const subject = encodeURIComponent(`[${item.title}] 배너 광고 문의`);
-    const body = encodeURIComponent([`${serviceField}${item.title}`, ...messageFields, "희망 게재 위치와 기간: "].join("\r\n"));
-    mail.href = `mailto:${inquiry.pathname}?subject=${subject}&body=${body}`;
-    mail.setAttribute("aria-label", `${item.title} 광고 문의 이메일 작성`);
+  const inquiry = row.querySelector(".banner-service-inquiry");
+  inquiry.hidden = Boolean(unavailableReason);
+  if (!unavailableReason) {
+    inquiry.href = `banner-ad.html?id=${encodeURIComponent(item.id)}`;
+    inquiry.setAttribute("aria-label", `${item.title} 광고 문의 상세 보기`);
   }
   row.querySelector(".banner-service-portfolio").href = getProjectDetailHref(item);
   return { category: item.category, row, unavailable: Boolean(unavailableReason) };

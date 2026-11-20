@@ -18,6 +18,7 @@ if (header) {
   const parentPage = {
     "project.html": "portfolio.html",
     "banner-ads.html": "contact.html",
+    "banner-ad.html": "contact.html",
   }[pathname];
   const activePage = parentPage ?? pathname;
   navigation.forEach(({ label, href }) => {

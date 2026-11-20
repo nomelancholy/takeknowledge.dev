@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서비스별 배너 광고 문의 | Take Knowledge</title>
+    <meta name="description" content="서비스별 배너 광고 위치와 이미지 규격을 확인하고 이메일로 문의하세요." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <header>
+      <a class="logo debossed-text logo-link" href="index.html">Take Knowledge</a>
+      <nav aria-label="주요 메뉴">
+        <a href="index.html">Main</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="career.html">Career</a>
+        <a href="contact.html" aria-current="location">Contact</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="project-detail-section" id="banner-ad-detail" aria-labelledby="banner-ad-title" hidden>
+        <a class="project-back-link" href="banner-ads.html#banner-services">← 광고 서비스 목록</a>
+        <div class="project-detail-hero">
+          <div class="project-detail-art"><img id="banner-ad-image" alt="" width="600" height="600" /></div>
+          <div class="project-detail-copy">
+            <span id="banner-ad-category" class="portfolio-category"></span>
+            <h1 id="banner-ad-title"></h1>
+            <p id="banner-ad-description" class="project-detail-description"></p>
+            <div class="project-launch-actions">
+              <a class="action-button" id="banner-ad-portfolio">포트폴리오 상세 <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+        <section class="banner-services" aria-labelledby="banner-ad-spec-title">
+          <h2 class="interior-subtitle" id="banner-ad-spec-title">광고 위치 및 이미지 규격</h2>
+          <div class="banner-service-detail">
+            <dl>
+              <dt>게재 위치</dt>
+              <dd class="banner-service-placement"></dd>
+              <dt>제출 이미지</dt>
+              <dd class="banner-service-material"></dd>
+            </dl>
+            <p class="banner-service-preparation" hidden></p>
+            <a class="action-button banner-service-guide" hidden>서비스 광고 안내 <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+        <section class="interior-next" id="banner-ad-inquiry" aria-labelledby="banner-ad-inquiry-title" hidden>
+          <div>
+            <h2 id="banner-ad-inquiry-title">배너 1개당 50,000원</h2>
+            <p>광고 내용, 연결할 주소, 희망 게재 위치와 기간을 적어 보내주세요.</p>
+            <p>받는 주소 <strong id="banner-ad-email">takeknowledge@naver.com</strong></p>
+          </div>
+          <div class="interior-next-actions">
+            <a class="action-button action-primary" id="banner-ad-mail">이메일로 문의하기 <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </section>
+      <section class="project-not-found" id="banner-ad-not-found" aria-labelledby="banner-ad-not-found-title" hidden>
+        <h1 id="banner-ad-not-found-title">광고 문의 페이지를 찾을 수 없어요.</h1>
+        <p>주소를 확인하거나 광고 서비스 목록에서 다시 선택해 주세요.</p>
+        <a class="action-button" href="banner-ads.html#banner-services">광고 서비스 목록 보기 <span aria-hidden="true">→</span></a>
+      </section>
+      <noscript><section><p>광고 상세 정보를 보려면 JavaScript를 활성화해 주세요.</p><a href="banner-ads.html">배너 광고 문의로 돌아가기</a></section></noscript>
+    </main>
+    <footer>&copy; 2026 TAKE KNOWLEDGE. ALL RIGHTS RESERVED. PRINTED IN DIGITAL GRAIN.</footer>
+    <script type="module" src="banner-ad.js"></script>
+  </body>
+</html>
