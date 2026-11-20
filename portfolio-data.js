@@ -196,6 +196,9 @@ export const portfolioItems = [
     thumbnailUrl: "assets/choi-rush-hour.jpg",
     bannerAd: {
       placement: "게임 시작 화면과 결과 화면의 광고 영역",
+      size: "640 × 160px",
+      formats: "PNG · JPG · WebP",
+      preparation: "같은 배너가 시작 화면과 결과 화면에 표시됩니다. 화면 너비에 맞춰 4:1 비율로 표시되므로 작은 화면에서도 읽기 쉽게 제작해 주세요.",
     },
   },
   {

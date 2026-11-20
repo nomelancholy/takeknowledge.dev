@@ -29,6 +29,7 @@ const entries = items.map((item) => {
     ? "직접 게재 불가"
     : ad?.size ?? (ad ? "이미지 규격 문의" : "게재 가능 여부 문의");
   renderBannerAdInfo(row, ad, unavailableReason);
+  row.querySelector(".banner-service-price").hidden = Boolean(unavailableReason);
 
   const inquiry = row.querySelector(".banner-service-inquiry");
   inquiry.hidden = Boolean(unavailableReason);
