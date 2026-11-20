@@ -822,7 +822,12 @@ header nav a[aria-current] { color: var(--accent); border-color: currentColor; }
 .banner-services { margin-top: 48px; padding: 0; scroll-margin-top: 24px; }
 .banner-services .interior-subtitle { margin-bottom: 8px; }
 .banner-services > p { color: var(--ink-light); line-height: 1.7; }
-.banner-service-list { margin-top: 24px; border-top: 1px solid var(--ink); list-style: none; }
+.banner-service-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin: 24px 0 12px; }
+.banner-service-filters .portfolio-category-filters { margin: 0; }
+.banner-service-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 0.9rem; cursor: pointer; }
+.banner-service-toggle input { width: 18px; height: 18px; accent-color: var(--ink); }
+.banner-service-count { font-size: 0.85rem; }
+.banner-service-list { margin-top: 12px; border-top: 1px solid var(--ink); list-style: none; }
 .banner-service { border-bottom: 1px solid var(--ink); }
 .banner-service summary {
   display: grid;

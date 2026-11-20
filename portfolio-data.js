@@ -264,6 +264,10 @@ export const portfolioLinkLabels = {
 // opened from this portfolio. This link was provided for Take-Knowledge.
 export const siteConfig = {
   donationHref: "https://link.kakaopay.com/__/ffe10Qe",
+  // Set bannerAdsUnavailable on an individual portfolio item to provide its own reason.
+  bannerAdsUnavailableByPlatform: {
+    toss: "토스 미니앱은 직접 배너 광고 문의를 받지 않습니다.",
+  },
 };
 
 export const portfolioCategories = ["all", ...Object.keys(categoryLabels)];

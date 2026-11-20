@@ -39,7 +39,16 @@
         <section class="banner-services" id="banner-services" aria-labelledby="banner-services-title" hidden>
           <h2 class="interior-subtitle" id="banner-services-title">포트폴리오 서비스</h2>
           <p>서비스를 펼치면 광고 위치와 이미지 규격을 볼 수 있어요. 규격이 표시되지 않은 서비스는 제작 전에 문의해 주세요.</p>
-          <ul class="banner-service-list"></ul>
+          <div class="banner-service-filters">
+            <div class="portfolio-category-filters" id="banner-category-filters" role="group" aria-label="서비스 카테고리"></div>
+            <label class="banner-service-toggle">
+              <input type="checkbox" id="banner-show-unavailable" aria-controls="banner-service-list" />
+              직접 게재 불가 항목도 보기
+            </label>
+          </div>
+          <p id="banner-service-count" class="banner-service-count" role="status"></p>
+          <p id="banner-service-empty" hidden></p>
+          <ul class="banner-service-list" id="banner-service-list" role="list"></ul>
         </section>
         <template id="banner-service-template">
           <li>
