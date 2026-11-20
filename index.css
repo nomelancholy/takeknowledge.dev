@@ -801,7 +801,7 @@ header nav a[aria-current] { color: var(--accent); border-color: currentColor; }
 .career-skills { border: 1px solid var(--ink); padding: 32px; background: rgba(255, 255, 255, 0.25); }
 .career-skills > p { color: var(--ink-light); font-size: 0.9rem; line-height: 1.8; }
 .career-skills .skill-list { margin-top: 28px; }
-.interior-next { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; border-top: 2px solid var(--ink); margin-top: 64px; padding-top: 36px; }
+.interior-next { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; border-top: 2px solid var(--ink); margin-top: 64px; padding: 36px 0 0; }
 .interior-next .section-label { margin-bottom: 12px; }
 .interior-next h2 { font-size: 1.5rem; line-height: 1.4; letter-spacing: -0.04em; margin-bottom: 12px; }
 .interior-next p { color: var(--ink-light); line-height: 1.7; font-size: 0.9rem; }

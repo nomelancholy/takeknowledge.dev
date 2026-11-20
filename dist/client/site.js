@@ -15,13 +15,16 @@ if (header) {
   const nav = document.createElement("nav");
   nav.setAttribute("aria-label", "주요 메뉴");
   const pathname = window.location.pathname.split("/").pop() || "index.html";
-  const isDetail = pathname === "project.html";
-  const activePage = isDetail ? "portfolio.html" : pathname;
+  const parentPage = {
+    "project.html": "portfolio.html",
+    "banner-ads.html": "contact.html",
+  }[pathname];
+  const activePage = parentPage ?? pathname;
   navigation.forEach(({ label, href }) => {
     const link = document.createElement("a");
     link.href = href;
     link.textContent = label;
-    if (href === activePage) link.setAttribute("aria-current", isDetail ? "location" : "page");
+    if (href === activePage) link.setAttribute("aria-current", parentPage ? "location" : "page");
     nav.appendChild(link);
   });
   header.replaceChildren(logo, nav);
