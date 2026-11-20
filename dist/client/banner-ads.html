@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>배너 광고 문의 | Take Knowledge</title>
-    <meta name="description" content="Take Knowledge 서비스의 배너 광고는 1개당 50,000원입니다. 게재를 원하는 서비스와 광고 내용을 이메일로 보내주세요." />
+    <meta name="description" content="Take Knowledge 서비스별 배너 광고 위치와 이미지 규격을 확인하세요. 배너는 1개당 50,000원입니다." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -26,15 +26,49 @@
       <section class="interior-page" aria-labelledby="banner-ads-title">
         <div class="directory-heading interior-heading">
           <h1 id="banner-ads-title">배너 광고 문의</h1>
-          <p>Take Knowledge 서비스에 배너 광고를 게재해 보세요.</p>
+          <p>광고를 게재할 서비스를 골라 이미지 크기와 준비할 소재를 확인해 보세요.</p>
         </div>
         <div class="contact-email-panel">
           <h2 class="interior-subtitle">배너 1개당 50,000원</h2>
           <div class="interior-next-actions">
-            <a class="action-button action-primary" href="mailto:takeknowledge@naver.com?subject=%EB%B0%B0%EB%84%88%20%EA%B4%91%EA%B3%A0%20%EB%AC%B8%EC%9D%98&amp;body=%EA%B4%91%EA%B3%A0%EB%A5%BC%20%EA%B2%8C%EC%9E%AC%ED%95%A0%20%EC%84%9C%EB%B9%84%EC%8A%A4%3A%20%0D%0A%EA%B4%91%EA%B3%A0%20%EB%82%B4%EC%9A%A9%3A%20%0D%0A%EA%B4%91%EA%B3%A0%20%ED%81%B4%EB%A6%AD%20%EC%8B%9C%20%EC%97%B0%EA%B2%B0%ED%95%A0%20%EC%A3%BC%EC%86%8C(%EC%9E%88%EB%8A%94%20%EA%B2%BD%EC%9A%B0)%3A%20">이메일로 문의하기 <span aria-hidden="true">↗</span></a>
+            <a class="action-button action-primary" href="#banner-services" hidden>서비스별 광고 규격 보기 <span aria-hidden="true">↓</span></a>
+            <a class="action-button" id="banner-inquiry-email" href="mailto:takeknowledge@naver.com?subject=%EB%B0%B0%EB%84%88%20%EA%B4%91%EA%B3%A0%20%EB%AC%B8%EC%9D%98&amp;body=%EA%B4%91%EA%B3%A0%EB%A5%BC%20%EA%B2%8C%EC%9E%AC%ED%95%A0%20%EC%84%9C%EB%B9%84%EC%8A%A4%3A%20%0D%0A%EA%B4%91%EA%B3%A0%20%EB%82%B4%EC%9A%A9%3A%20%0D%0A%EA%B4%91%EA%B3%A0%20%ED%81%B4%EB%A6%AD%20%EC%8B%9C%20%EC%97%B0%EA%B2%B0%ED%95%A0%20%EC%A3%BC%EC%86%8C(%EC%9E%88%EB%8A%94%20%EA%B2%BD%EC%9A%B0)%3A%20">이메일로 문의하기 <span aria-hidden="true">↗</span></a>
           </div>
           <p>받는 주소 <strong>takeknowledge@naver.com</strong></p>
         </div>
+        <section class="banner-services" id="banner-services" aria-labelledby="banner-services-title" hidden>
+          <h2 class="interior-subtitle" id="banner-services-title">포트폴리오 서비스</h2>
+          <p>서비스를 펼치면 광고 위치와 이미지 규격을 볼 수 있어요. 규격이 표시되지 않은 서비스는 제작 전에 문의해 주세요.</p>
+          <ul class="banner-service-list"></ul>
+        </section>
+        <template id="banner-service-template">
+          <li>
+            <details class="banner-service">
+              <summary>
+                <img class="banner-service-image" width="80" height="52" alt="" loading="lazy" />
+                <span class="banner-service-name">
+                  <span class="banner-service-category"></span>
+                  <strong></strong>
+                </span>
+                <span class="banner-service-status"></span>
+              </summary>
+              <div class="banner-service-detail">
+                <dl>
+                  <dt>게재 위치</dt>
+                  <dd class="banner-service-placement"></dd>
+                  <dt>제출 이미지</dt>
+                  <dd class="banner-service-material"></dd>
+                </dl>
+                <p class="banner-service-preparation" hidden></p>
+                <div class="interior-next-actions">
+                  <a class="action-button action-primary banner-service-mail">이 서비스에 광고 문의 <span aria-hidden="true">↗</span></a>
+                  <a class="action-button banner-service-portfolio">포트폴리오 상세 <span aria-hidden="true">→</span></a>
+                  <a class="action-button banner-service-guide" hidden>서비스 광고 안내 <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </details>
+          </li>
+        </template>
         <section class="interior-next" aria-labelledby="banner-inquiry-title">
           <div>
             <h2 id="banner-inquiry-title">메일에 아래 내용을 적어주세요.</h2>
@@ -61,6 +95,6 @@
     </main>
     <footer>&copy; 2026 TAKE KNOWLEDGE. ALL RIGHTS RESERVED. PRINTED IN DIGITAL GRAIN.</footer>
 
-    <script type="module" src="site.js"></script>
+    <script type="module" src="banner-ads.js"></script>
   </body>
 </html>

@@ -121,6 +121,9 @@ export const portfolioItems = [
       "여러 Supabase 계정과 프로젝트를 한곳에서 정리하고, 무료 프로젝트 배정 현황을 한눈에 관리할 수 있는 개인 보드 서비스입니다.",
     linkHref: "https://supamap.vercel.app/",
     thumbnailUrl: "assets/supa-map.png",
+    bannerAd: {
+      placement: "로그인 후 계정 보드 옆 광고 문의 영역",
+    },
   },
   {
     category: "web",
@@ -133,6 +136,13 @@ export const portfolioItems = [
       "포스트잇 규격을 선택하고 원하는 내용과 글꼴을 배치해 A4 용지에 딱 맞게 인쇄할 수 있는 포스트잇 인쇄 가이드 서비스입니다.",
     linkHref: "https://a4-sticky-guide.vercel.app/",
     thumbnailUrl: "assets/a4-sticky-guide.png",
+    bannerAd: {
+      placement: "A4 미리보기 주변 1~4번 칸. 넓은 PC 화면에서는 오른쪽, 모바일과 좁은 화면에서는 미리보기 위에 표시됩니다.",
+      size: "400 × 200 px 권장",
+      formats: "PNG, JPG, WebP · 2:1 비율",
+      preparation: "배너 대신 정사각형 로고(256 × 256 px 이상)를 보낼 수 있습니다. 서비스 이름, 한 줄 소개(40자 안팎), 연결할 주소와 희망 칸 번호를 함께 알려주세요.",
+      guideHref: "https://a4-sticky-guide.vercel.app/advertise.html",
+    },
   },
   {
     category: "web",
@@ -169,6 +179,9 @@ export const portfolioItems = [
       "상사와 업무를 피해 오후 6시까지 버티는 사무실 생존 아케이드 게임입니다. 방향키나 스와이프로 최과장을 움직이고, 딴짓 아이템과 콤보로 점수를 쌓으며 무사 퇴근에 도전하세요.",
     linkHref: "https://choi-the-salary-thief.vercel.app/",
     thumbnailUrl: "assets/choi-the-salary-thief.png",
+    bannerAd: {
+      placement: "게임 대기 화면과 플레이 화면의 광고 영역",
+    },
   },
   {
     category: "game",
@@ -181,6 +194,9 @@ export const portfolioItems = [
       "신호와 부장 눈치를 살피며 무사 퇴근에 도전하는 타이밍 생존 게임입니다. 움직일 때와 일하는 척할 때를 골라 월요일부터 금요일까지 버티고, 퇴근 성공 일수와 최고 점수에 도전하세요.",
     linkHref: "https://choi-rush-hour.vercel.app/",
     thumbnailUrl: "assets/choi-rush-hour.jpg",
+    bannerAd: {
+      placement: "게임 시작 화면과 결과 화면의 광고 영역",
+    },
   },
   {
     category: "game",
@@ -193,6 +209,9 @@ export const portfolioItems = [
       "결재와 회의, 긴급 수정 같은 업무 장애물을 피해 사다리를 오르는 오피스 클라이머 게임입니다. 이동과 점프로 5개 층을 돌파할 때마다 한 직급씩 승진하며, 과장부터 사장까지 올라가는 도전에 나서세요.",
     linkHref: "https://promotion-war.vercel.app/",
     thumbnailUrl: "assets/promotion-war.png",
+    bannerAd: {
+      placement: "게임 대기 화면, 다른 게임 목록과 결과 화면의 광고 영역",
+    },
   },
   {
     category: "game",

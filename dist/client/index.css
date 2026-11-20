@@ -819,6 +819,49 @@ header nav a[aria-current] { color: var(--accent); border-color: currentColor; }
 .contact-channels p { color: var(--ink-light); font-size: 0.85rem; }
 .contact-channels > a > span { font-size: 1.5rem; }
 
+.banner-services { margin-top: 48px; padding: 0; scroll-margin-top: 24px; }
+.banner-services .interior-subtitle { margin-bottom: 8px; }
+.banner-services > p { color: var(--ink-light); line-height: 1.7; }
+.banner-service-list { margin-top: 24px; border-top: 1px solid var(--ink); list-style: none; }
+.banner-service { border-bottom: 1px solid var(--ink); }
+.banner-service summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+  list-style: none;
+  cursor: pointer;
+}
+.banner-service summary::-webkit-details-marker { display: none; }
+.banner-service summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin: 0 6px 4px 2px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.banner-service[open] summary::after { margin-bottom: 0; transform: rotate(225deg); }
+.banner-service summary:hover strong { color: var(--accent); }
+.banner-service-image { width: 80px; height: 52px; object-fit: cover; border: 1px solid var(--ink); }
+.banner-service-name { display: grid; gap: 4px; overflow-wrap: anywhere; }
+.banner-service-category, .banner-service-status { color: var(--ink-light); font-size: 0.82rem; }
+.banner-service-status { font-weight: 700; }
+.banner-service-detail {
+  display: grid;
+  gap: 16px;
+  padding: 18px clamp(16px, 3vw, 32px);
+  margin-bottom: 14px;
+  background: rgba(0, 0, 0, 0.04);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+.banner-service-detail dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 20px; }
+.banner-service-detail dt { font-weight: 800; }
+.banner-service-detail .action-button { min-height: 44px; padding: 10px 16px; }
+
 @media (max-width: 1100px) {
   .portfolio-directory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -836,6 +879,10 @@ header nav a[aria-current] { color: var(--accent); border-color: currentColor; }
 @media (max-width: 480px) {
   header { padding: 36px 5%; }
   .logo { font-size: clamp(1.5rem, 8vw, 2rem); letter-spacing: -1.5px; }
+  .banner-service summary { grid-template-columns: auto minmax(0, 1fr) auto; gap: 4px 12px; }
+  .banner-service-image { grid-row: span 2; width: 56px; height: 46px; }
+  .banner-service-status { grid-column: 2; grid-row: 2; }
+  .banner-service summary::after { grid-column: 3; grid-row: 1 / span 2; }
 }
 
 /* The home carousel scrolls only its horizontal rail, keeping the page still. */
