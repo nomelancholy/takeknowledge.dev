@@ -123,8 +123,14 @@ test("normalizes case, full-width letters, punctuation, and spacing", () => {
   assert.deepEqual(ids("운동 운동 습관"), ids("운동 습관"));
 });
 
-test("preserves categories and original order when no search is entered", () => {
-  assert.deepEqual(searchPortfolio("  "), portfolioItems);
+test("shows featured projects first and preserves category filtering", () => {
+  assert.deepEqual(ids("  ").slice(0, 9), [
+    "see-var", "dot", "supa-map", "pull-up-one-reps", "choi-the-salary-thief",
+    "a4-sticky-guide", "qr-pass", "beacon-port", "wedding-money",
+  ]);
+  assert.equal(ids("").length, portfolioItems.length);
+  assert.deepEqual(new Set(ids("")), new Set(portfolioItems.map(item => item.id)));
+  assert.deepEqual(ids("", "web"), ["see-var", "dot", "supa-map", "pull-up-one-reps", "a4-sticky-guide", "beacon-port", "wedding-money"]);
   assert.equal(ids("", "web").length, 7);
   assert.equal(ids("", "app").length, 5);
   assert.equal(ids("", "lecture").length, 1);

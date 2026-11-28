@@ -252,6 +252,32 @@ export const portfolioItems = [
   },
 ];
 
+// Shared default order for the homepage and portfolio directory.
+const displayOrder = [
+  "see-var",
+  "dot",
+  "supa-map",
+  "pull-up-one-reps",
+  "choi-the-salary-thief",
+  "a4-sticky-guide",
+  "qr-pass",
+  "beacon-port",
+  "wedding-money",
+  "fitpocket",
+  "watermelon-inspector",
+  "big5-ocean",
+  "my-energy-blueprint",
+  "choi-rush-hour",
+  "promotion-war",
+  "ninja-choi-office-escape",
+  "pumpkin-market-course",
+];
+
+const displayPosition = new Map(displayOrder.map((id, index) => [id, index]));
+export const portfolioDisplayItems = [...portfolioItems].sort((a, b) =>
+  (displayPosition.get(a.id) ?? displayOrder.length) - (displayPosition.get(b.id) ?? displayOrder.length)
+);
+
 export const categoryLabels = {
   web: "Web",
   app: "App",
@@ -330,7 +356,7 @@ function compactSearchText(value) {
 const synonymGroups = searchSynonyms.map(group => group.map(compactSearchText));
 const searchPhrases = searchSynonyms.flat().filter(word => /[\s-]/u.test(word))
   .sort((a, b) => b.length - a.length);
-const searchIndex = portfolioItems.map((item) => ({
+const searchIndex = portfolioDisplayItems.map((item) => ({
   item,
   fields: [
     { weight: 12, values: [item.title] },

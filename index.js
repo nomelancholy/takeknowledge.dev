@@ -1,6 +1,6 @@
 import "./site.js";
 import "./profile.js";
-import { portfolioItems, categoryLabels, appPlatformLabels, portfolioLinkLabels, getProjectDetailHref } from "./portfolio-data.js";
+import { portfolioDisplayItems, categoryLabels, appPlatformLabels, portfolioLinkLabels, getProjectDetailHref } from "./portfolio-data.js";
 import { isMobileDevice, openTossQrDialog, setupTossQrDialog } from "./toss-qr.js";
 
 let activeCategory = "all";
@@ -9,23 +9,6 @@ let portfolioPageSize = getPortfolioPageSize();
 let portfolioItemCount = 0;
 let requestedPortfolioPage = null;
 let portfolioScrollTimer;
-let randomizedPortfolioItems = shufflePortfolioItems(portfolioItems);
-
-function shufflePortfolioItems(items) {
-  const shuffledItems = [...items];
-
-  for (let index = shuffledItems.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [shuffledItems[index], shuffledItems[randomIndex]] = [shuffledItems[randomIndex], shuffledItems[index]];
-  }
-
-  const orderDidNotChange = shuffledItems.every((item, index) => item === items[index]);
-  if (orderDidNotChange && shuffledItems.length > 1) {
-    shuffledItems.push(shuffledItems.shift());
-  }
-
-  return shuffledItems;
-}
 
 function getPortfolioPageSize() {
   return window.matchMedia("(max-width: 768px)").matches ? 1 : 2;
@@ -44,8 +27,8 @@ function renderPortfolio() {
   container.innerHTML = "";
 
   const visibleItems = activeCategory === "all"
-    ? randomizedPortfolioItems
-    : portfolioItems.filter((item) => item.category === activeCategory);
+    ? portfolioDisplayItems
+    : portfolioDisplayItems.filter((item) => item.category === activeCategory);
   if (emptyState) emptyState.hidden = visibleItems.length > 0;
 
   portfolioItemCount = visibleItems.length;
@@ -195,21 +178,18 @@ function setupPortfolioPagination() {
 }
 
 function setupPortfolioFilters() {
-  const counts = portfolioItems.reduce((result, item) => {
+  const counts = portfolioDisplayItems.reduce((result, item) => {
     result[item.category] = (result[item.category] || 0) + 1;
     return result;
   }, {});
 
   document.querySelectorAll(".filter-btn[data-category]").forEach((btn) => {
     const category = btn.dataset.category;
-    const count = category === "all" ? portfolioItems.length : counts[category] || 0;
+    const count = category === "all" ? portfolioDisplayItems.length : counts[category] || 0;
     btn.querySelector("span").textContent = String(count).padStart(2, "0");
     btn.addEventListener("click", () => {
       activeCategory = category;
       activePortfolioPage = 1;
-      if (category === "all") {
-        randomizedPortfolioItems = shufflePortfolioItems(randomizedPortfolioItems);
-      }
       document.querySelectorAll(".filter-btn").forEach((filterBtn) => {
         const isActive = filterBtn === btn;
         filterBtn.classList.toggle("is-active", isActive);
